@@ -29,3 +29,6 @@ skeleton = NodePath("../..")
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.807815, 0.589436, 0, -0.589436, 0.807815, 0.463854, 6.37069, 5.67976)
 fov = 110.169
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.963849, 0.266448, 0, -0.266448, 0.963849, 0, 3.05349, 6.22252)

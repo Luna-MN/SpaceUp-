@@ -5,7 +5,6 @@ public partial class Movement : CharacterBody3D
 {
 	[Export]
 	public float speed = 5.0f;
-	public const float JumpVelocity = 4.5f;
 	public bool inhibitMovement = false;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -14,24 +13,22 @@ public partial class Movement : CharacterBody3D
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector3 newVelocity = Vector3.Zero;
-		if (inhibitMovement == false)
+
+		if (Input.IsKeyPressed(Key.W))
 		{
-			if (Input.IsKeyPressed(Key.W))
-			{
-				newVelocity -= Vector3.Back * speed;
-			}
-			if (Input.IsKeyPressed(Key.S))
-			{
-				newVelocity -= Vector3.Forward * speed;
-			}
-			if (Input.IsKeyPressed(Key.A))
-			{
-				newVelocity -= Vector3.Right * speed;
-			}
-			if (Input.IsKeyPressed(Key.D))
-			{
-				newVelocity -= Vector3.Left * speed;
-			}
+			newVelocity -= Vector3.Back * speed;
+		}
+		if (Input.IsKeyPressed(Key.S))
+		{
+			newVelocity -= Vector3.Forward * speed;
+		}
+		if (Input.IsKeyPressed(Key.A))
+		{
+			newVelocity -= Vector3.Right * speed;
+		}
+		if (Input.IsKeyPressed(Key.D))
+		{
+			newVelocity -= Vector3.Left * speed;
 		}
 
 		Velocity = newVelocity;

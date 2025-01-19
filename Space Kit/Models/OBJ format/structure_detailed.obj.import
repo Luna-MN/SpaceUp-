@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d1elladssw7ni"
+path="res://.godot/imported/structure_detailed.obj-f612dc7d2e527aa2ba0a0c21284dc17e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/structure_detailed.obj-f612dc7d2e527aa2ba0a0c21284dc17e.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/structure_detailed.obj"
+dest_files=["res://.godot/imported/structure_detailed.obj-f612dc7d2e527aa2ba0a0c21284dc17e.mesh", "res://.godot/imported/structure_detailed.obj-f612dc7d2e527aa2ba0a0c21284dc17e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

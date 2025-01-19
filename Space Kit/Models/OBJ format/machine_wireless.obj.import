@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://byjkbebt88td0"
+path="res://.godot/imported/machine_wireless.obj-c37354e81913932393f7751807c640ea.mesh"
+
+[deps]
+
+files=["res://.godot/imported/machine_wireless.obj-c37354e81913932393f7751807c640ea.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/machine_wireless.obj"
+dest_files=["res://.godot/imported/machine_wireless.obj-c37354e81913932393f7751807c640ea.mesh", "res://.godot/imported/machine_wireless.obj-c37354e81913932393f7751807c640ea.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

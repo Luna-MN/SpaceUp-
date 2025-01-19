@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cnf06xbh1i6w7"
+path="res://.godot/imported/supports_low.obj-2d9425b2cd2932f6bf916d901f674070.mesh"
+
+[deps]
+
+files=["res://.godot/imported/supports_low.obj-2d9425b2cd2932f6bf916d901f674070.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/supports_low.obj"
+dest_files=["res://.godot/imported/supports_low.obj-2d9425b2cd2932f6bf916d901f674070.mesh", "res://.godot/imported/supports_low.obj-2d9425b2cd2932f6bf916d901f674070.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

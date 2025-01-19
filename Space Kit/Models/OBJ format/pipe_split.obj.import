@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://clsi45whxw3hs"
+path="res://.godot/imported/pipe_split.obj-37db78740552945d6254395bf7f8edd3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pipe_split.obj-37db78740552945d6254395bf7f8edd3.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/pipe_split.obj"
+dest_files=["res://.godot/imported/pipe_split.obj-37db78740552945d6254395bf7f8edd3.mesh", "res://.godot/imported/pipe_split.obj-37db78740552945d6254395bf7f8edd3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bvfymm3xd7xy2"
+path="res://.godot/imported/floor-corner.obj-22c13f41d274e7e37aa1ea9d090d4efe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor-corner.obj-22c13f41d274e7e37aa1ea9d090d4efe.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/floor-corner.obj"
+dest_files=["res://.godot/imported/floor-corner.obj-22c13f41d274e7e37aa1ea9d090d4efe.mesh", "res://.godot/imported/floor-corner.obj-22c13f41d274e7e37aa1ea9d090d4efe.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

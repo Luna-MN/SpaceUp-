@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b87oc02dtifr4"
+path="res://.godot/imported/chair-cushion-headrest.obj-af08ec7606b1e464816c848abd0fc64c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/chair-cushion-headrest.obj-af08ec7606b1e464816c848abd0fc64c.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/chair-cushion-headrest.obj"
+dest_files=["res://.godot/imported/chair-cushion-headrest.obj-af08ec7606b1e464816c848abd0fc64c.mesh", "res://.godot/imported/chair-cushion-headrest.obj-af08ec7606b1e464816c848abd0fc64c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfy440hsuxn8r"
+path="res://.godot/imported/container-tall.obj-59cd2326700bdf897129c6b227e2c994.mesh"
+
+[deps]
+
+files=["res://.godot/imported/container-tall.obj-59cd2326700bdf897129c6b227e2c994.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/container-tall.obj"
+dest_files=["res://.godot/imported/container-tall.obj-59cd2326700bdf897129c6b227e2c994.mesh", "res://.godot/imported/container-tall.obj-59cd2326700bdf897129c6b227e2c994.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

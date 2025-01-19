@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ro64iw3qatye"
+path="res://.godot/imported/meteor.obj-058f489d647f6573b22e6d3c37d78eda.mesh"
+
+[deps]
+
+files=["res://.godot/imported/meteor.obj-058f489d647f6573b22e6d3c37d78eda.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/meteor.obj"
+dest_files=["res://.godot/imported/meteor.obj-058f489d647f6573b22e6d3c37d78eda.mesh", "res://.godot/imported/meteor.obj-058f489d647f6573b22e6d3c37d78eda.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

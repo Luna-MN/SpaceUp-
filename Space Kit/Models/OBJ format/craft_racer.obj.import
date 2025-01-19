@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfedcipl6o2df"
+path="res://.godot/imported/craft_racer.obj-af72392dc26274e3f2c188bac5f6136b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/craft_racer.obj-af72392dc26274e3f2c188bac5f6136b.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/craft_racer.obj"
+dest_files=["res://.godot/imported/craft_racer.obj-af72392dc26274e3f2c188bac5f6136b.mesh", "res://.godot/imported/craft_racer.obj-af72392dc26274e3f2c188bac5f6136b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

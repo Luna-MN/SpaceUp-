@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dso8wecdsvo7x"
+path="res://.godot/imported/weapon-shield.obj-e43a506ee12dca2e37062acf9b6c4d7a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/weapon-shield.obj-e43a506ee12dca2e37062acf9b6c4d7a.mesh"]
+
+source_file="res://Prototype Kit/Models/OBJ format/weapon-shield.obj"
+dest_files=["res://.godot/imported/weapon-shield.obj-e43a506ee12dca2e37062acf9b6c4d7a.mesh", "res://.godot/imported/weapon-shield.obj-e43a506ee12dca2e37062acf9b6c4d7a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

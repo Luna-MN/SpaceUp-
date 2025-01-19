@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dmj6c085xrg1j"
+path="res://.godot/imported/structure-panel.obj-1ed31a9a9da73365c3a3327e09d02827.mesh"
+
+[deps]
+
+files=["res://.godot/imported/structure-panel.obj-1ed31a9a9da73365c3a3327e09d02827.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/structure-panel.obj"
+dest_files=["res://.godot/imported/structure-panel.obj-1ed31a9a9da73365c3a3327e09d02827.mesh", "res://.godot/imported/structure-panel.obj-1ed31a9a9da73365c3a3327e09d02827.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

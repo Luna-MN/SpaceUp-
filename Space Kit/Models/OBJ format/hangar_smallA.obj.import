@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bs863iv3tmdpa"
+path="res://.godot/imported/hangar_smallA.obj-f65bd88bbeea8e73a396a273c5392e4f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hangar_smallA.obj-f65bd88bbeea8e73a396a273c5392e4f.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/hangar_smallA.obj"
+dest_files=["res://.godot/imported/hangar_smallA.obj-f65bd88bbeea8e73a396a273c5392e4f.mesh", "res://.godot/imported/hangar_smallA.obj-f65bd88bbeea8e73a396a273c5392e4f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

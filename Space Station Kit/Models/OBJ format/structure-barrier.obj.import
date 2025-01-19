@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dckluu5rf8dx5"
+path="res://.godot/imported/structure-barrier.obj-bad3af249723a7cab824d0bc19ec6968.mesh"
+
+[deps]
+
+files=["res://.godot/imported/structure-barrier.obj-bad3af249723a7cab824d0bc19ec6968.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/structure-barrier.obj"
+dest_files=["res://.godot/imported/structure-barrier.obj-bad3af249723a7cab824d0bc19ec6968.mesh", "res://.godot/imported/structure-barrier.obj-bad3af249723a7cab824d0bc19ec6968.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

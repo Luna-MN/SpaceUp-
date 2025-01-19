@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://q3uxitaj6bm8"
+path="res://.godot/imported/clipA.obj-ac9bcd3030f3045fbdc6f7c19b71db0d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/clipA.obj-ac9bcd3030f3045fbdc6f7c19b71db0d.mesh"]
+
+source_file="res://Blaster Kit/Models/OBJ format/clipA.obj"
+dest_files=["res://.godot/imported/clipA.obj-ac9bcd3030f3045fbdc6f7c19b71db0d.mesh", "res://.godot/imported/clipA.obj-ac9bcd3030f3045fbdc6f7c19b71db0d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

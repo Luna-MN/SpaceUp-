@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://7agj37imbgxb"
+path="res://.godot/imported/supports_high.obj-5c491d61c84a220c6b033376ccb9669f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/supports_high.obj-5c491d61c84a220c6b033376ccb9669f.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/supports_high.obj"
+dest_files=["res://.godot/imported/supports_high.obj-5c491d61c84a220c6b033376ccb9669f.mesh", "res://.godot/imported/supports_high.obj-5c491d61c84a220c6b033376ccb9669f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

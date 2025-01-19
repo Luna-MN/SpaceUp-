@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dvc6yvstvueo0"
+path="res://.godot/imported/pipe-end.obj-a06424bb346d55b8f500e511b9cbb2a2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pipe-end.obj-a06424bb346d55b8f500e511b9cbb2a2.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/pipe-end.obj"
+dest_files=["res://.godot/imported/pipe-end.obj-a06424bb346d55b8f500e511b9cbb2a2.mesh", "res://.godot/imported/pipe-end.obj-a06424bb346d55b8f500e511b9cbb2a2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

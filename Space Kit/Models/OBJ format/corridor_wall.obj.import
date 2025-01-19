@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwkx1y5l2dfj"
+path="res://.godot/imported/corridor_wall.obj-4956d29439f3c5cb0defd488ca53b125.mesh"
+
+[deps]
+
+files=["res://.godot/imported/corridor_wall.obj-4956d29439f3c5cb0defd488ca53b125.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/corridor_wall.obj"
+dest_files=["res://.godot/imported/corridor_wall.obj-4956d29439f3c5cb0defd488ca53b125.mesh", "res://.godot/imported/corridor_wall.obj-4956d29439f3c5cb0defd488ca53b125.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

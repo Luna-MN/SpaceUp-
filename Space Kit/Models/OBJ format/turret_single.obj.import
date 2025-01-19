@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwcgw5penwe4h"
+path="res://.godot/imported/turret_single.obj-78579d6882277c855f79cd589c6facf1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/turret_single.obj-78579d6882277c855f79cd589c6facf1.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/turret_single.obj"
+dest_files=["res://.godot/imported/turret_single.obj-78579d6882277c855f79cd589c6facf1.mesh", "res://.godot/imported/turret_single.obj-78579d6882277c855f79cd589c6facf1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

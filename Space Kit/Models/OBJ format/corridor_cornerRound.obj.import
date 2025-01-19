@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cwauxbgvhvl77"
+path="res://.godot/imported/corridor_cornerRound.obj-474591e2e993b9942a88dca1f5e6ee2c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/corridor_cornerRound.obj-474591e2e993b9942a88dca1f5e6ee2c.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/corridor_cornerRound.obj"
+dest_files=["res://.godot/imported/corridor_cornerRound.obj-474591e2e993b9942a88dca1f5e6ee2c.mesh", "res://.godot/imported/corridor_cornerRound.obj-474591e2e993b9942a88dca1f5e6ee2c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

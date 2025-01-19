@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csjka44kahgf8"
+path="res://.godot/imported/door-single.obj-d46aa2f8c263475b77b7b83a86ec0b57.mesh"
+
+[deps]
+
+files=["res://.godot/imported/door-single.obj-d46aa2f8c263475b77b7b83a86ec0b57.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/door-single.obj"
+dest_files=["res://.godot/imported/door-single.obj-d46aa2f8c263475b77b7b83a86ec0b57.mesh", "res://.godot/imported/door-single.obj-d46aa2f8c263475b77b7b83a86ec0b57.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://btu8r53a1w3ah"
+path="res://.godot/imported/floor-panel-end.obj-60a83afae12484f364d2d4f61fdb2efe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor-panel-end.obj-60a83afae12484f364d2d4f61fdb2efe.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/floor-panel-end.obj"
+dest_files=["res://.godot/imported/floor-panel-end.obj-60a83afae12484f364d2d4f61fdb2efe.mesh", "res://.godot/imported/floor-panel-end.obj-60a83afae12484f364d2d4f61fdb2efe.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

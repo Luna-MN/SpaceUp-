@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dccdu2emhd80d"
+path="res://.godot/imported/stairs-corner.obj-d9f96d41bed5224e0ee4401038c58801.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairs-corner.obj-d9f96d41bed5224e0ee4401038c58801.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/stairs-corner.obj"
+dest_files=["res://.godot/imported/stairs-corner.obj-d9f96d41bed5224e0ee4401038c58801.mesh", "res://.godot/imported/stairs-corner.obj-d9f96d41bed5224e0ee4401038c58801.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

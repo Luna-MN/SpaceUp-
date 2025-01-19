@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://hink3j0tan0s"
+path="res://.godot/imported/rock.obj-41b0f880684be8de4e04e3a69f583246.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rock.obj-41b0f880684be8de4e04e3a69f583246.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/rock.obj"
+dest_files=["res://.godot/imported/rock.obj-41b0f880684be8de4e04e3a69f583246.mesh", "res://.godot/imported/rock.obj-41b0f880684be8de4e04e3a69f583246.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

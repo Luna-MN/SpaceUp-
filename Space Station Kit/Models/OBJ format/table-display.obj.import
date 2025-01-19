@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dy4g0p1l7aau6"
+path="res://.godot/imported/table-display.obj-586a626e6a5ab8a195f4c440345f2803.mesh"
+
+[deps]
+
+files=["res://.godot/imported/table-display.obj-586a626e6a5ab8a195f4c440345f2803.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/table-display.obj"
+dest_files=["res://.godot/imported/table-display.obj-586a626e6a5ab8a195f4c440345f2803.mesh", "res://.godot/imported/table-display.obj-586a626e6a5ab8a195f4c440345f2803.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

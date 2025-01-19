@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dgqbulxwsx3x6"
+path="res://.godot/imported/terrain_ramp.obj-74470c9ff00ff1cae48ebcfa5cd6f165.mesh"
+
+[deps]
+
+files=["res://.godot/imported/terrain_ramp.obj-74470c9ff00ff1cae48ebcfa5cd6f165.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/terrain_ramp.obj"
+dest_files=["res://.godot/imported/terrain_ramp.obj-74470c9ff00ff1cae48ebcfa5cd6f165.mesh", "res://.godot/imported/terrain_ramp.obj-74470c9ff00ff1cae48ebcfa5cd6f165.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

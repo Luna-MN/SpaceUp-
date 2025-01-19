@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://clftfnup27ejp"
+path="res://.godot/imported/computer.obj-65fceb54fe6c4432301fb56692e26590.mesh"
+
+[deps]
+
+files=["res://.godot/imported/computer.obj-65fceb54fe6c4432301fb56692e26590.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/computer.obj"
+dest_files=["res://.godot/imported/computer.obj-65fceb54fe6c4432301fb56692e26590.mesh", "res://.godot/imported/computer.obj-65fceb54fe6c4432301fb56692e26590.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

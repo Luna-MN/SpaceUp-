@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://df6ja8imhwxu1"
+path="res://.godot/imported/wall-corner-round-banner.obj-4b0fffdc6a5f9bfe8aeb0cfcf714aa13.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-corner-round-banner.obj-4b0fffdc6a5f9bfe8aeb0cfcf714aa13.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/wall-corner-round-banner.obj"
+dest_files=["res://.godot/imported/wall-corner-round-banner.obj-4b0fffdc6a5f9bfe8aeb0cfcf714aa13.mesh", "res://.godot/imported/wall-corner-round-banner.obj-4b0fffdc6a5f9bfe8aeb0cfcf714aa13.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://pjth7gdlnyxu"
+path="res://.godot/imported/pipe-split.obj-44920876599b986d2436c943532d0e0e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pipe-split.obj-44920876599b986d2436c943532d0e0e.mesh"]
+
+source_file="res://Prototype Kit/Models/OBJ format/pipe-split.obj"
+dest_files=["res://.godot/imported/pipe-split.obj-44920876599b986d2436c943532d0e0e.mesh", "res://.godot/imported/pipe-split.obj-44920876599b986d2436c943532d0e0e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

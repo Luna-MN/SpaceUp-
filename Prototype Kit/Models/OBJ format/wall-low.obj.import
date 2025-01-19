@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c261fvgrgao77"
+path="res://.godot/imported/wall-low.obj-a8abf4e87f24775305d1eb7a3fe076cb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-low.obj-a8abf4e87f24775305d1eb7a3fe076cb.mesh"]
+
+source_file="res://Prototype Kit/Models/OBJ format/wall-low.obj"
+dest_files=["res://.godot/imported/wall-low.obj-a8abf4e87f24775305d1eb7a3fe076cb.mesh", "res://.godot/imported/wall-low.obj-a8abf4e87f24775305d1eb7a3fe076cb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

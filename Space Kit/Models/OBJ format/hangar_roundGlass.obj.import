@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3b4ss1ohsj6n"
+path="res://.godot/imported/hangar_roundGlass.obj-db4c3335c77c3b7d51d45d451d8e796b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hangar_roundGlass.obj-db4c3335c77c3b7d51d45d451d8e796b.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/hangar_roundGlass.obj"
+dest_files=["res://.godot/imported/hangar_roundGlass.obj-db4c3335c77c3b7d51d45d451d8e796b.mesh", "res://.godot/imported/hangar_roundGlass.obj-db4c3335c77c3b7d51d45d451d8e796b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

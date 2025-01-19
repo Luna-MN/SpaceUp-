@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ccueau6yrqwbv"
+path="res://.godot/imported/wall-door-center.obj-4f888c24b7afaacc32fc508b6c216ef7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-door-center.obj-4f888c24b7afaacc32fc508b6c216ef7.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/wall-door-center.obj"
+dest_files=["res://.godot/imported/wall-door-center.obj-4f888c24b7afaacc32fc508b6c216ef7.mesh", "res://.godot/imported/wall-door-center.obj-4f888c24b7afaacc32fc508b6c216ef7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://oiopcxlmjxe3"
+path="res://.godot/imported/shape-cube-half.obj-688adbdf7c2686d93c2eadf9f93a6446.mesh"
+
+[deps]
+
+files=["res://.godot/imported/shape-cube-half.obj-688adbdf7c2686d93c2eadf9f93a6446.mesh"]
+
+source_file="res://Prototype Kit/Models/OBJ format/shape-cube-half.obj"
+dest_files=["res://.godot/imported/shape-cube-half.obj-688adbdf7c2686d93c2eadf9f93a6446.mesh", "res://.godot/imported/shape-cube-half.obj-688adbdf7c2686d93c2eadf9f93a6446.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

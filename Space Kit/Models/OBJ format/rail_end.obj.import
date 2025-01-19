@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://q3qmhuo8ja2j"
+path="res://.godot/imported/rail_end.obj-b44aecb2a54e7f1eccbe32eb57a8ac27.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rail_end.obj-b44aecb2a54e7f1eccbe32eb57a8ac27.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/rail_end.obj"
+dest_files=["res://.godot/imported/rail_end.obj-b44aecb2a54e7f1eccbe32eb57a8ac27.mesh", "res://.godot/imported/rail_end.obj-b44aecb2a54e7f1eccbe32eb57a8ac27.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

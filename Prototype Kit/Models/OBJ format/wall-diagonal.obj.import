@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dtfk8sopq8y4x"
+path="res://.godot/imported/wall-diagonal.obj-b71d30e3c583f89d41908d64b588e2df.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-diagonal.obj-b71d30e3c583f89d41908d64b588e2df.mesh"]
+
+source_file="res://Prototype Kit/Models/OBJ format/wall-diagonal.obj"
+dest_files=["res://.godot/imported/wall-diagonal.obj-b71d30e3c583f89d41908d64b588e2df.mesh", "res://.godot/imported/wall-diagonal.obj-b71d30e3c583f89d41908d64b588e2df.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

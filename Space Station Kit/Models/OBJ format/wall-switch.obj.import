@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bcdituq1u27of"
+path="res://.godot/imported/wall-switch.obj-4b9199c2df293384e5cf6066f2c6eb2f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-switch.obj-4b9199c2df293384e5cf6066f2c6eb2f.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/wall-switch.obj"
+dest_files=["res://.godot/imported/wall-switch.obj-4b9199c2df293384e5cf6066f2c6eb2f.mesh", "res://.godot/imported/wall-switch.obj-4b9199c2df293384e5cf6066f2c6eb2f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

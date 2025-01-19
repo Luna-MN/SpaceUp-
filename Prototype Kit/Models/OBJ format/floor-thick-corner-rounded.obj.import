@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cmcud28nifj0a"
+path="res://.godot/imported/floor-thick-corner-rounded.obj-c9abd234c91ca8f2b29393db459e4185.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor-thick-corner-rounded.obj-c9abd234c91ca8f2b29393db459e4185.mesh"]
+
+source_file="res://Prototype Kit/Models/OBJ format/floor-thick-corner-rounded.obj"
+dest_files=["res://.godot/imported/floor-thick-corner-rounded.obj-c9abd234c91ca8f2b29393db459e4185.mesh", "res://.godot/imported/floor-thick-corner-rounded.obj-c9abd234c91ca8f2b29393db459e4185.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

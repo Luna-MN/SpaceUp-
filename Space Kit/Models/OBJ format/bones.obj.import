@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bl543pvg48cof"
+path="res://.godot/imported/bones.obj-8c404a0bd14fdad0e890be85ecc7a57f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bones.obj-8c404a0bd14fdad0e890be85ecc7a57f.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/bones.obj"
+dest_files=["res://.godot/imported/bones.obj-8c404a0bd14fdad0e890be85ecc7a57f.mesh", "res://.godot/imported/bones.obj-8c404a0bd14fdad0e890be85ecc7a57f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

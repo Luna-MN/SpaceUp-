@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dkn83x0opieai"
+path.s3tc="res://.godot/imported/chair-b85741110b831d074430cb3c89eb9bd8_colormap.png-bc33f62b74760b2c9541ab192a3dd273.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://Space Station Kit/Models/FBX format/chair-b85741110b831d074430cb3c89eb9bd8_colormap.png"
+dest_files=["res://.godot/imported/chair-b85741110b831d074430cb3c89eb9bd8_colormap.png-bc33f62b74760b2c9541ab192a3dd273.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

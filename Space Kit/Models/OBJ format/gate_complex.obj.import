@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bucwvi57mcl83"
+path="res://.godot/imported/gate_complex.obj-1321254d56665e2c082ffda1286c38bc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/gate_complex.obj-1321254d56665e2c082ffda1286c38bc.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/gate_complex.obj"
+dest_files=["res://.godot/imported/gate_complex.obj-1321254d56665e2c082ffda1286c38bc.mesh", "res://.godot/imported/gate_complex.obj-1321254d56665e2c082ffda1286c38bc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

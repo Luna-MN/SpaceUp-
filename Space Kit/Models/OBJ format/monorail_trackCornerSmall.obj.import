@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://yey1a1jy5c3i"
+path="res://.godot/imported/monorail_trackCornerSmall.obj-98de12f31bd1c3c4772579ed66ba0102.mesh"
+
+[deps]
+
+files=["res://.godot/imported/monorail_trackCornerSmall.obj-98de12f31bd1c3c4772579ed66ba0102.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/monorail_trackCornerSmall.obj"
+dest_files=["res://.godot/imported/monorail_trackCornerSmall.obj-98de12f31bd1c3c4772579ed66ba0102.mesh", "res://.godot/imported/monorail_trackCornerSmall.obj-98de12f31bd1c3c4772579ed66ba0102.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

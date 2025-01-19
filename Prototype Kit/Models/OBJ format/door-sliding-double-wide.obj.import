@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://daw66h22kt1ae"
+path="res://.godot/imported/door-sliding-double-wide.obj-bda4ef5825bfa3f523181e2d00af33a6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/door-sliding-double-wide.obj-bda4ef5825bfa3f523181e2d00af33a6.mesh"]
+
+source_file="res://Prototype Kit/Models/OBJ format/door-sliding-double-wide.obj"
+dest_files=["res://.godot/imported/door-sliding-double-wide.obj-bda4ef5825bfa3f523181e2d00af33a6.mesh", "res://.godot/imported/door-sliding-double-wide.obj-bda4ef5825bfa3f523181e2d00af33a6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

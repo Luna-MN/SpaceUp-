@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://x3wvufxlrxew"
+path="res://.godot/imported/rocket_fuelA.obj-93e9ced90e89416fab21863136cfcb9f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rocket_fuelA.obj-93e9ced90e89416fab21863136cfcb9f.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/rocket_fuelA.obj"
+dest_files=["res://.godot/imported/rocket_fuelA.obj-93e9ced90e89416fab21863136cfcb9f.mesh", "res://.godot/imported/rocket_fuelA.obj-93e9ced90e89416fab21863136cfcb9f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

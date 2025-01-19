@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bvbp6y1qo3yby"
+path="res://.godot/imported/pipe_cross.obj-c0ce93a171eb9d8d66d0f1ca9593509f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pipe_cross.obj-c0ce93a171eb9d8d66d0f1ca9593509f.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/pipe_cross.obj"
+dest_files=["res://.godot/imported/pipe_cross.obj-c0ce93a171eb9d8d66d0f1ca9593509f.mesh", "res://.godot/imported/pipe_cross.obj-c0ce93a171eb9d8d66d0f1ca9593509f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

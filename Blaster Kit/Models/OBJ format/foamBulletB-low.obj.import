@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cpeapo5p2snol"
+path="res://.godot/imported/foamBulletB-low.obj-016872d5b1a82588899fe9801e37669e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/foamBulletB-low.obj-016872d5b1a82588899fe9801e37669e.mesh"]
+
+source_file="res://Blaster Kit/Models/OBJ format/foamBulletB-low.obj"
+dest_files=["res://.godot/imported/foamBulletB-low.obj-016872d5b1a82588899fe9801e37669e.mesh", "res://.godot/imported/foamBulletB-low.obj-016872d5b1a82588899fe9801e37669e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

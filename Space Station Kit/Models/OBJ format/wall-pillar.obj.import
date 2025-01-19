@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cubjovvpg35wq"
+path="res://.godot/imported/wall-pillar.obj-530ff515b0deee8d8ab1d45262bad922.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-pillar.obj-530ff515b0deee8d8ab1d45262bad922.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/wall-pillar.obj"
+dest_files=["res://.godot/imported/wall-pillar.obj-530ff515b0deee8d8ab1d45262bad922.mesh", "res://.godot/imported/wall-pillar.obj-530ff515b0deee8d8ab1d45262bad922.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

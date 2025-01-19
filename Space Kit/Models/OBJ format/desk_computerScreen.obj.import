@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c6j4yhe3j6aag"
+path="res://.godot/imported/desk_computerScreen.obj-5f52901f2ade36121f40fee4c61b8e74.mesh"
+
+[deps]
+
+files=["res://.godot/imported/desk_computerScreen.obj-5f52901f2ade36121f40fee4c61b8e74.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/desk_computerScreen.obj"
+dest_files=["res://.godot/imported/desk_computerScreen.obj-5f52901f2ade36121f40fee4c61b8e74.mesh", "res://.godot/imported/desk_computerScreen.obj-5f52901f2ade36121f40fee4c61b8e74.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bxx1hoyfixnkr"
+path="res://.godot/imported/rocket_sidesA.obj-85f6a6ce410d4daadcde9dce3c7516d6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rocket_sidesA.obj-85f6a6ce410d4daadcde9dce3c7516d6.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/rocket_sidesA.obj"
+dest_files=["res://.godot/imported/rocket_sidesA.obj-85f6a6ce410d4daadcde9dce3c7516d6.mesh", "res://.godot/imported/rocket_sidesA.obj-85f6a6ce410d4daadcde9dce3c7516d6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

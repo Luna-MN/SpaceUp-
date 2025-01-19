@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfv6sdx4f8xgs"
+path="res://.godot/imported/platform_center.obj-6f1f3e3c757e4b6a74ebf2e4005d83e3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/platform_center.obj-6f1f3e3c757e4b6a74ebf2e4005d83e3.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/platform_center.obj"
+dest_files=["res://.godot/imported/platform_center.obj-6f1f3e3c757e4b6a74ebf2e4005d83e3.mesh", "res://.godot/imported/platform_center.obj-6f1f3e3c757e4b6a74ebf2e4005d83e3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

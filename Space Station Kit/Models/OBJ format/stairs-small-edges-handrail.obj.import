@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dayoi7oq1vd6v"
+path="res://.godot/imported/stairs-small-edges-handrail.obj-ccb8f78cb2bd37c6606ae089e27f923a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairs-small-edges-handrail.obj-ccb8f78cb2bd37c6606ae089e27f923a.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/stairs-small-edges-handrail.obj"
+dest_files=["res://.godot/imported/stairs-small-edges-handrail.obj-ccb8f78cb2bd37c6606ae089e27f923a.mesh", "res://.godot/imported/stairs-small-edges-handrail.obj-ccb8f78cb2bd37c6606ae089e27f923a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

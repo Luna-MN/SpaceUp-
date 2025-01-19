@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dfvw2hx4hqfl"
+path.s3tc="res://.godot/imported/pipe-99cf4673dd8f9e493bfb3e74ff5a1792_colormap.png-4cc81b4d14470197928a1332b15c6093.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://Prototype Kit/Models/FBX format/pipe-99cf4673dd8f9e493bfb3e74ff5a1792_colormap.png"
+dest_files=["res://.godot/imported/pipe-99cf4673dd8f9e493bfb3e74ff5a1792_colormap.png-4cc81b4d14470197928a1332b15c6093.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

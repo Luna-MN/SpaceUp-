@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b4kbmvqgqtr1u"
+path="res://.godot/imported/balcony-rail-corner.obj-bd52b6f59d5e0a974b6e924dc471872e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/balcony-rail-corner.obj-bd52b6f59d5e0a974b6e924dc471872e.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/balcony-rail-corner.obj"
+dest_files=["res://.godot/imported/balcony-rail-corner.obj-bd52b6f59d5e0a974b6e924dc471872e.mesh", "res://.godot/imported/balcony-rail-corner.obj-bd52b6f59d5e0a974b6e924dc471872e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

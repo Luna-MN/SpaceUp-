@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c47p76jq3kskr"
+path="res://.godot/imported/platform_end.obj-ea5db5d91ccaa613df78c77f2153e94b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/platform_end.obj-ea5db5d91ccaa613df78c77f2153e94b.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/platform_end.obj"
+dest_files=["res://.godot/imported/platform_end.obj-ea5db5d91ccaa613df78c77f2153e94b.mesh", "res://.godot/imported/platform_end.obj-ea5db5d91ccaa613df78c77f2153e94b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

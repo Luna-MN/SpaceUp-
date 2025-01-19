@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://0lxjuh40rqcr"
+path="res://.godot/imported/shape-hollow-cylinder-half-detailed.obj-401f79f06c3f1c7b0e8e8370f975695e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/shape-hollow-cylinder-half-detailed.obj-401f79f06c3f1c7b0e8e8370f975695e.mesh"]
+
+source_file="res://Prototype Kit/Models/OBJ format/shape-hollow-cylinder-half-detailed.obj"
+dest_files=["res://.godot/imported/shape-hollow-cylinder-half-detailed.obj-401f79f06c3f1c7b0e8e8370f975695e.mesh", "res://.godot/imported/shape-hollow-cylinder-half-detailed.obj-401f79f06c3f1c7b0e8e8370f975695e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

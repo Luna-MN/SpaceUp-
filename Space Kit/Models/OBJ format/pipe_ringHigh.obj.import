@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://usrbimtt02yc"
+path="res://.godot/imported/pipe_ringHigh.obj-bfba9e57ce62ee2d7a7ff2af9cf9c703.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pipe_ringHigh.obj-bfba9e57ce62ee2d7a7ff2af9cf9c703.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/pipe_ringHigh.obj"
+dest_files=["res://.godot/imported/pipe_ringHigh.obj-bfba9e57ce62ee2d7a7ff2af9cf9c703.mesh", "res://.godot/imported/pipe_ringHigh.obj-bfba9e57ce62ee2d7a7ff2af9cf9c703.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

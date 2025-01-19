@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dsq602dl0ydng"
+path="res://.godot/imported/stairs-diagonal-small.obj-a676430181a36ee84aec33aff4d0e65d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairs-diagonal-small.obj-a676430181a36ee84aec33aff4d0e65d.mesh"]
+
+source_file="res://Prototype Kit/Models/OBJ format/stairs-diagonal-small.obj"
+dest_files=["res://.godot/imported/stairs-diagonal-small.obj-a676430181a36ee84aec33aff4d0e65d.mesh", "res://.godot/imported/stairs-diagonal-small.obj-a676430181a36ee84aec33aff4d0e65d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

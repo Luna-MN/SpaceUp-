@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kcei88eff5l7"
+path="res://.godot/imported/wall-door-edge.obj-d7b2ed0ddb2b46b9ce6d2884275b1b07.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-door-edge.obj-d7b2ed0ddb2b46b9ce6d2884275b1b07.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/wall-door-edge.obj"
+dest_files=["res://.godot/imported/wall-door-edge.obj-d7b2ed0ddb2b46b9ce6d2884275b1b07.mesh", "res://.godot/imported/wall-door-edge.obj-d7b2ed0ddb2b46b9ce6d2884275b1b07.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

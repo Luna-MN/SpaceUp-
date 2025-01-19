@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://524krrq4vc46"
+path.s3tc="res://.godot/imported/indicator-round-e-fcf6785c11671224e4e44f1e1362e469_colormap.png-622382ed1de4619c87e13c47bd1be17f.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://Prototype Kit/Models/FBX format/indicator-round-e-fcf6785c11671224e4e44f1e1362e469_colormap.png"
+dest_files=["res://.godot/imported/indicator-round-e-fcf6785c11671224e4e44f1e1362e469_colormap.png-622382ed1de4619c87e13c47bd1be17f.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bkviibu51r4y5"
+path="res://.godot/imported/balcony-floor.obj-57a02b0c89b63c8f1c1b0b70f505bab1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/balcony-floor.obj-57a02b0c89b63c8f1c1b0b70f505bab1.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/balcony-floor.obj"
+dest_files=["res://.godot/imported/balcony-floor.obj-57a02b0c89b63c8f1c1b0b70f505bab1.mesh", "res://.godot/imported/balcony-floor.obj-57a02b0c89b63c8f1c1b0b70f505bab1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

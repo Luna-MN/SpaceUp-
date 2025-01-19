@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b2dca6b3hiq7d"
+path="res://.godot/imported/rocks_smallB.obj-512cf98592bbaa56f600f9579c54e788.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rocks_smallB.obj-512cf98592bbaa56f600f9579c54e788.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/rocks_smallB.obj"
+dest_files=["res://.godot/imported/rocks_smallB.obj-512cf98592bbaa56f600f9579c54e788.mesh", "res://.godot/imported/rocks_smallB.obj-512cf98592bbaa56f600f9579c54e788.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

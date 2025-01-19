@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://wo66vq0kvvsf"
+path="res://.godot/imported/wall-window-shutters.obj-72aa170f84198a064ba44225b2c78d0c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-window-shutters.obj-72aa170f84198a064ba44225b2c78d0c.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/wall-window-shutters.obj"
+dest_files=["res://.godot/imported/wall-window-shutters.obj-72aa170f84198a064ba44225b2c78d0c.mesh", "res://.godot/imported/wall-window-shutters.obj-72aa170f84198a064ba44225b2c78d0c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

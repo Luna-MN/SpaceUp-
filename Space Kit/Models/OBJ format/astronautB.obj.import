@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bh5m0cj7b3e0h"
+path="res://.godot/imported/astronautB.obj-a7b8460d99d0c27ec10afeeb3f4b5bc1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/astronautB.obj-a7b8460d99d0c27ec10afeeb3f4b5bc1.mesh"]
+
+source_file="res://Space Kit/Models/OBJ format/astronautB.obj"
+dest_files=["res://.godot/imported/astronautB.obj-a7b8460d99d0c27ec10afeeb3f4b5bc1.mesh", "res://.godot/imported/astronautB.obj-a7b8460d99d0c27ec10afeeb3f4b5bc1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

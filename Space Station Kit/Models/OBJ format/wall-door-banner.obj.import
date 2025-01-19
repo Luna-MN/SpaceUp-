@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://draggan0yw3ke"
+path="res://.godot/imported/wall-door-banner.obj-933b7a9f0faf26d6cef77aa3c80aba6e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-door-banner.obj-933b7a9f0faf26d6cef77aa3c80aba6e.mesh"]
+
+source_file="res://Space Station Kit/Models/OBJ format/wall-door-banner.obj"
+dest_files=["res://.godot/imported/wall-door-banner.obj-933b7a9f0faf26d6cef77aa3c80aba6e.mesh", "res://.godot/imported/wall-door-banner.obj-933b7a9f0faf26d6cef77aa3c80aba6e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

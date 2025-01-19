@@ -3,40 +3,39 @@ using System;
 
 public partial class Movement : CharacterBody3D
 {
-	public const float Speed = 5.0f;
+	[Export]
+	public float speed = 5.0f;
 	public const float JumpVelocity = 4.5f;
+	public bool inhibitMovement = false;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
 	public override void _PhysicsProcess(double delta)
 	{
-		Vector3 velocity = Velocity;
-
-		// Add the gravity.
-		if (!IsOnFloor())
-			velocity.Y -= gravity * (float)delta;
-
-		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-			velocity.Y = JumpVelocity;
-
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
-		if (direction != Vector3.Zero)
+		Vector3 newVelocity = Vector3.Zero;
+		if (inhibitMovement == false)
 		{
-			velocity.X = direction.X * Speed;
-			velocity.Z = direction.Z * Speed;
-		}
-		else
-		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed);
+			if (Input.IsKeyPressed(Key.W))
+			{
+				newVelocity -= Vector3.Back * speed;
+			}
+			if (Input.IsKeyPressed(Key.S))
+			{
+				newVelocity -= Vector3.Forward * speed;
+			}
+			if (Input.IsKeyPressed(Key.A))
+			{
+				newVelocity -= Vector3.Right * speed;
+			}
+			if (Input.IsKeyPressed(Key.D))
+			{
+				newVelocity -= Vector3.Left * speed;
+			}
 		}
 
-		Velocity = velocity;
+		Velocity = newVelocity;
 		MoveAndSlide();
 	}
 }
+

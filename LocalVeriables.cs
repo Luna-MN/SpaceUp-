@@ -16,7 +16,7 @@ public partial class LocalVeriables : Node3D
 	{
 		localPos = ((Node3D)GetChild(0)).Position;
 	}
-	private void Pickup()
+	private void Pickup(Node3D body)
 	{
 		GD.Print("Picked up");
 	}

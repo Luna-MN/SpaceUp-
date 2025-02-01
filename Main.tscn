@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Floor.cs" id="1_r2xs4"]
 [ext_resource type="Script" path="res://Movement.cs" id="3_4c3tf"]
 [ext_resource type="Script" path="res://LocalVeriables.cs" id="3_oh1nl"]
-[ext_resource type="PackedScene" uid="uid://24uvm1ccq0rx" path="res://Space Station Kit/Models/FBX format/container-wide.fbx" id="5_syqdp"]
+[ext_resource type="PackedScene" uid="uid://b2eiop4i77eac" path="res://container.tscn" id="5_ymclc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_krtei"]
 
@@ -38,5 +38,6 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 0.807815, 0.589436, 0, -0.589436, 0.807815, 0.463854, 6.37069, 5.67976)
 fov = 110.169
 
-[node name="container-wide" parent="." instance=ExtResource("5_syqdp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9661, 0.3, -10.0108)
+[node name="container-wide" parent="." node_paths=PackedStringArray("playerVeriables") instance=ExtResource("5_ymclc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28988, 0.387819, -13.7375)
+playerVeriables = NodePath("../Local Player")

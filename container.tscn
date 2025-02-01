@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2eiop4i77eac"]
+
+[ext_resource type="PackedScene" uid="uid://24uvm1ccq0rx" path="res://Space Station Kit/Models/FBX format/container-wide.fbx" id="1_g1mow"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wljaa"]
+radius = 1.82161
+
+[node name="container-wide" instance=ExtResource("1_g1mow")]
+
+[node name="Area3D" type="Area3D" parent="RootNode" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/Area3D" index="0"]
+shape = SubResource("SphereShape3D_wljaa")

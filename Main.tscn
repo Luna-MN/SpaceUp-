@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkec4a000ipcs"]
+[gd_scene load_steps=8 format=3 uid="uid://dkec4a000ipcs"]
 
 [ext_resource type="PackedScene" uid="uid://1akhfng5pmhg" path="res://Space Station Kit/Models/FBX format/floor-detail.fbx" id="1_786ch"]
 [ext_resource type="Script" path="res://Floor.cs" id="1_r2xs4"]
 [ext_resource type="Script" path="res://Movement.cs" id="3_4c3tf"]
+[ext_resource type="Script" path="res://LocalVeriables.cs" id="3_oh1nl"]
+[ext_resource type="PackedScene" uid="uid://24uvm1ccq0rx" path="res://Space Station Kit/Models/FBX format/container-wide.fbx" id="5_syqdp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_krtei"]
 
@@ -14,21 +16,27 @@
 script = ExtResource("1_r2xs4")
 floorScene = ExtResource("1_786ch")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.963849, 0.266448, 0, -0.266448, 0.963849, 0, 3.05349, 6.22252)
+
+[node name="Local Player" type="Node3D" parent="."]
+script = ExtResource("3_oh1nl")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Local Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51697, 0)
 script = ExtResource("3_4c3tf")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Local Player/CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82471, 0)
 shape = SubResource("CapsuleShape3D_krtei")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Local Player/CharacterBody3D/CollisionShape3D"]
 mesh = SubResource("CapsuleMesh_0t27c")
 skeleton = NodePath("../..")
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+[node name="Camera3D" type="Camera3D" parent="Local Player/CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.807815, 0.589436, 0, -0.589436, 0.807815, 0.463854, 6.37069, 5.67976)
 fov = 110.169
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.963849, 0.266448, 0, -0.266448, 0.963849, 0, 3.05349, 6.22252)
+[node name="container-wide" parent="." instance=ExtResource("5_syqdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9661, 0.3, -10.0108)

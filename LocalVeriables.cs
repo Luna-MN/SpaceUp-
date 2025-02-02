@@ -20,10 +20,12 @@ public partial class LocalVeriables : Node3D
 	}
 	private void Pickup(Node3D body)
 	{
-		if (body is LocalVeriables)
+		if (body is CharacterBody3D)
 		{
 			inPickupRange = true;
+			GD.Print(pickupObject);
 		}
+
 	}
 	public void SetObject(Node3D obj)
 	{

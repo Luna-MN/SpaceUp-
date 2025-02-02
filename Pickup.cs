@@ -17,6 +17,5 @@ public partial class Pickup : Node3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		GD.Print(playerVeriables);
 	}
 }

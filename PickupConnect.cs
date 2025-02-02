@@ -15,6 +15,11 @@ public partial class PickupConnect : Area3D
 	}
 	public void Pickup()
 	{
-		Connect("body_entered", pickup.playerVeriables.OnPickup);
+		Connect("body_entered", new Callable(this, "OnBodyEntered"));
+	}
+	private void OnBodyEntered(Node body)
+	{
+		pickup.playerVeriables.SetObject(pickup);
+		pickup.playerVeriables.OnPickup.Call((Node3D)body);
 	}
 }

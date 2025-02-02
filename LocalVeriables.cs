@@ -5,6 +5,8 @@ public partial class LocalVeriables : Node3D
 {
 	public Vector3 localPos { get; private set; }
 	public Callable OnPickup;
+	public bool inPickupRange { get; private set; }
+	public Node3D pickupObject { get; private set; }
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -18,6 +20,13 @@ public partial class LocalVeriables : Node3D
 	}
 	private void Pickup(Node3D body)
 	{
-		GD.Print("Picked up");
+		if (body is LocalVeriables)
+		{
+			inPickupRange = true;
+		}
+	}
+	public void SetObject(Node3D obj)
+	{
+		pickupObject = obj;
 	}
 }

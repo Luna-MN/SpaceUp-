@@ -6,7 +6,8 @@ public partial class LocalVeriables : Node3D
 	public Vector3 localPos { get; private set; }
 	public Callable OnPickup;
 	public bool inPickupRange { get; private set; }
-	public Node3D pickupObject { get; private set; }
+	public Pickup pickupObject { get; private set; }
+	public Vector3 currentPickupOffset { get; private set; }
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -17,6 +18,10 @@ public partial class LocalVeriables : Node3D
 	public override void _Process(double delta)
 	{
 		localPos = ((Node3D)GetChild(0)).Position;
+		if (inPickupRange && Input.IsKeyPressed(Key.E))
+		{
+			//pickup logic
+		}
 	}
 	private void Pickup(Node3D body)
 	{
@@ -27,8 +32,15 @@ public partial class LocalVeriables : Node3D
 		}
 
 	}
-	public void SetObject(Node3D obj)
+	public void SetObject(Pickup obj)
 	{
 		pickupObject = obj;
+		currentPickupOffset = obj.pickupOffset;
+	}
+	public void Reset()
+	{
+		inPickupRange = false;
+		pickupObject = null;
+		currentPickupOffset = Vector3.Zero;
 	}
 }

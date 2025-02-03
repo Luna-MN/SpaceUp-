@@ -7,6 +7,8 @@ public partial class Pickup : Node3D
 	public LocalVeriables playerVeriables;
 	[Export]
 	public PickupConnect pickupConnect;
+	[Export]
+	public Vector3 pickupOffset;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{

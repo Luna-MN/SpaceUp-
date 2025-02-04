@@ -42,4 +42,3 @@ fov = 110.169
 [node name="container-wide" parent="." node_paths=PackedStringArray("playerVeriables") instance=ExtResource("5_ymclc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28988, 0.387819, -13.7375)
 playerVeriables = NodePath("../Local Player")
-pickupOffset = Vector3(-6.14, -3.5, -5.3)

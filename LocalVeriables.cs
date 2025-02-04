@@ -7,6 +7,7 @@ public partial class LocalVeriables : Node3D
 	public Callable OnPickup;
 	public bool inPickupRange { get; private set; }
 	public Pickup pickupObject { get; private set; }
+	public Pickup oldPickupObject { get; private set; }
 	public Vector3 currentPickupOffset { get; private set; }
 	[Export]
 	public CharacterBody3D player;
@@ -20,11 +21,27 @@ public partial class LocalVeriables : Node3D
 	public override void _Process(double delta)
 	{
 		localPos = ((Node3D)GetChild(0)).Position;
+		Position = localPos;
 		if (inPickupRange && Input.IsKeyPressed(Key.E))
 		{
-			pickupObject.GlobalPosition = player.GlobalPosition + currentPickupOffset;
-			GD.Print(player.GlobalPosition, " ", pickupObject.GlobalPosition);
+			if (pickupObject.GetParent() != null)
+			{
+				CallDeferred("RemoveChildParent");
+			}
+			CallDeferred("AddChildToObject");
+			GD.Print(pickupObject.GetParent(), GetParent());
+			inPickupRange = false;
 		}
+		else if (Input.IsKeyPressed(Key.Q))
+		{
+			if (pickupObject.GetParent() != null)
+			{
+				CallDeferred("RemoveChildObject");
+			}
+			CallDeferred("AddChildToObject");
+		}
+		oldPickupObject.Position = new Vector3(0, 0, 0);
+		//GD.Print(pickupObject.GetParent(), GetParent());
 	}
 	private void Pickup(Node3D body)
 	{
@@ -45,5 +62,21 @@ public partial class LocalVeriables : Node3D
 		inPickupRange = false;
 		pickupObject = null;
 		currentPickupOffset = Vector3.Zero;
+	}
+	public void RemoveChildParent()
+	{
+		if (pickupObject != null)
+		{
+			oldPickupObject = pickupObject;
+		}
+		pickupObject.GetParent().RemoveChild(pickupObject);
+	}
+	public void AddChildToObject()
+	{
+		AddChild(oldPickupObject);
+	}
+	public void RemoveChildObject()
+	{
+		oldPickupObject.GetParent().RemoveChild(oldPickupObject);
 	}
 }

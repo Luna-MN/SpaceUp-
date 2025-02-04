@@ -19,8 +19,9 @@ floorScene = ExtResource("1_786ch")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.963849, 0.266448, 0, -0.266448, 0.963849, 0, 3.05349, 6.22252)
 
-[node name="Local Player" type="Node3D" parent="."]
+[node name="Local Player" type="Node3D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("3_oh1nl")
+player = NodePath("CharacterBody3D")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="Local Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51697, 0)
@@ -41,3 +42,4 @@ fov = 110.169
 [node name="container-wide" parent="." node_paths=PackedStringArray("playerVeriables") instance=ExtResource("5_ymclc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28988, 0.387819, -13.7375)
 playerVeriables = NodePath("../Local Player")
+pickupOffset = Vector3(-6.14, -3.5, -5.3)

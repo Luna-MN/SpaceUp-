@@ -21,7 +21,7 @@ public partial class PickupConnect : Area3D
 	private void OnBodyEntered(Node3D body)
 	{
 		pickup.playerVeriables.SetObject(pickup);
-		pickup.playerVeriables.OnPickup.Call((Pickup)body);
+		pickup.playerVeriables.OnPickup.Call(body);
 	}
 	private void OnBodyExited(Node3D body)
 	{

@@ -9,6 +9,7 @@ public partial class LocalVeriables : Node3D
 	public Pickup pickupObject { get; private set; }
 	public Pickup oldPickupObject { get; private set; }
 	public Vector3 currentPickupOffset { get; private set; }
+	public Vector3 oldPickupOffset { get; private set; }
 	[Export]
 	public CharacterBody3D player;
 	// Called when the node enters the scene tree for the first time.
@@ -40,6 +41,7 @@ public partial class LocalVeriables : Node3D
 			}
 			CallDeferred("AddChildToObject");
 		}
+		CallDeferred("MoveChildObject");
 		//GD.Print(pickupObject.GetParent(), GetParent());
 	}
 	private void Pickup(Node3D body)
@@ -67,6 +69,7 @@ public partial class LocalVeriables : Node3D
 		if (pickupObject != null)
 		{
 			oldPickupObject = pickupObject;
+			oldPickupOffset = currentPickupOffset;
 		}
 		oldPickupObject.GetParent().RemoveChild(oldPickupObject);
 	}
@@ -74,10 +77,16 @@ public partial class LocalVeriables : Node3D
 	{
 		AddChild(oldPickupObject);
 		GD.Print(oldPickupObject.GetParent().Name, Name);
-		oldPickupObject.Position = Position;
 	}
 	public void RemoveChildObject()
 	{
 		oldPickupObject.GetParent().RemoveChild(oldPickupObject);
+	}
+	public void MoveChildObject()
+	{
+		if (oldPickupObject.GetParent().Name == Name)
+		{
+			oldPickupObject.Position = Position + oldPickupOffset;
+		}
 	}
 }

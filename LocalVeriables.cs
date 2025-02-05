@@ -20,7 +20,7 @@ public partial class LocalVeriables : Node3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		localPos = ((Node3D)GetChild(0)).Position;
+		localPos = player.Position;
 		Position = localPos;
 		if (inPickupRange && Input.IsKeyPressed(Key.E))
 		{
@@ -29,7 +29,7 @@ public partial class LocalVeriables : Node3D
 				CallDeferred("RemoveChildParent");
 			}
 			CallDeferred("AddChildToObject");
-			GD.Print(pickupObject.GetParent(), GetParent());
+
 			inPickupRange = false;
 		}
 		else if (Input.IsKeyPressed(Key.Q))
@@ -40,7 +40,6 @@ public partial class LocalVeriables : Node3D
 			}
 			CallDeferred("AddChildToObject");
 		}
-		oldPickupObject.Position = new Vector3(0, 0, 0);
 		//GD.Print(pickupObject.GetParent(), GetParent());
 	}
 	private void Pickup(Node3D body)
@@ -69,11 +68,13 @@ public partial class LocalVeriables : Node3D
 		{
 			oldPickupObject = pickupObject;
 		}
-		pickupObject.GetParent().RemoveChild(pickupObject);
+		oldPickupObject.GetParent().RemoveChild(oldPickupObject);
 	}
 	public void AddChildToObject()
 	{
 		AddChild(oldPickupObject);
+		GD.Print(oldPickupObject.GetParent().Name, Name);
+		oldPickupObject.Position = Position;
 	}
 	public void RemoveChildObject()
 	{

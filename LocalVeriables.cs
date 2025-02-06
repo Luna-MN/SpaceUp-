@@ -39,7 +39,7 @@ public partial class LocalVeriables : Node3D
 			{
 				CallDeferred("RemoveChildObject");
 			}
-			CallDeferred("AddChildToObject");
+			CallDeferred("AddChildToParent");
 		}
 		CallDeferred("MoveChildObject");
 		//GD.Print(pickupObject.GetParent(), GetParent());
@@ -88,5 +88,9 @@ public partial class LocalVeriables : Node3D
 		{
 			oldPickupObject.Position = Position + oldPickupOffset;
 		}
+	}
+	public void AddChildToParent()
+	{
+		GetParent().AddChild(oldPickupObject);
 	}
 }

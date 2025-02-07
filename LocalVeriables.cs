@@ -33,7 +33,7 @@ public partial class LocalVeriables : Node3D
 
 			inPickupRange = false;
 		}
-		else if (Input.IsKeyPressed(Key.Q))
+		else if (!inPickupRange && Input.IsKeyPressed(Key.E))
 		{
 			if (pickupObject.GetParent() != null)
 			{

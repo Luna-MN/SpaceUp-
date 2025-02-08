@@ -40,6 +40,6 @@ transform = Transform3D(1, 0, 0, 0, 0.807815, 0.589436, 0, -0.589436, 0.807815, 
 fov = 110.169
 
 [node name="container-wide" parent="." node_paths=PackedStringArray("playerVeriables") instance=ExtResource("5_ymclc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28988, 0.387819, -13.7375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29913, 0.419573, -13.6616)
 playerVeriables = NodePath("../Local Player")
-pickupOffset = Vector3(0.62, 0, 0.805)
+pickupOffset = Vector3(0, 1, 1)

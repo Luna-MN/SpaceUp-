@@ -23,6 +23,14 @@ public partial class LocalVeriables : Node3D
 	{
 		localPos = player.Position;
 		Position = localPos;
+		if (!inPickupRange && Input.IsKeyPressed(Key.E))
+		{
+			if (pickupObject.GetParent() != null)
+			{
+				CallDeferred("RemoveChildObject");
+			}
+			CallDeferred("AddChildToParent");
+		}
 		if (inPickupRange && Input.IsKeyPressed(Key.E))
 		{
 			if (pickupObject.GetParent() != null)
@@ -33,14 +41,7 @@ public partial class LocalVeriables : Node3D
 
 			inPickupRange = false;
 		}
-		else if (!inPickupRange && Input.IsKeyPressed(Key.E))
-		{
-			if (pickupObject.GetParent() != null)
-			{
-				CallDeferred("RemoveChildObject");
-			}
-			CallDeferred("AddChildToParent");
-		}
+
 		CallDeferred("MoveChildObject");
 		//GD.Print(pickupObject.GetParent(), GetParent());
 	}

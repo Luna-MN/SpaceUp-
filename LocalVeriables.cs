@@ -33,13 +33,6 @@ public partial class LocalVeriables : Node3D
 			CallDeferred("AddChildToObject");
 			PickedUp = false;
 		}
-		{
-			if (pickupObject.GetParent() != null)
-			{
-				CallDeferred("RemoveChildObject");
-			}
-			CallDeferred("AddChildToParent");
-		}
 		if (inPickupRange && Input.IsKeyPressed(Key.E) && !PickedUp)
 		{
 			if (pickupObject.GetParent() != null)
@@ -48,14 +41,6 @@ public partial class LocalVeriables : Node3D
 			}
 			CallDeferred("AddChildToObject");
 			PickedUp = true;
-		}
-		{
-			if (pickupObject.GetParent() != null)
-			{
-				CallDeferred("RemoveChildParent");
-			}
-			CallDeferred("AddChildToObject");
-
 		}
 
 		CallDeferred("MoveChildObject");

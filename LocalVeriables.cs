@@ -24,27 +24,36 @@ public partial class LocalVeriables : Node3D
 	{
 		localPos = player.Position;
 		Position = localPos;
-		if (Input.IsKeyPressed(Key.E) && PickedUp)
-		{
-			if (pickupObject.GetParent() != null)
-			{
-				CallDeferred("RemoveChildParent");
-			}
-			CallDeferred("AddChildToObject");
-			PickedUp = false;
-		}
-		if (inPickupRange && Input.IsKeyPressed(Key.E) && !PickedUp)
-		{
-			if (pickupObject.GetParent() != null)
-			{
-				CallDeferred("RemoveChildParent");
-			}
-			CallDeferred("AddChildToObject");
-			PickedUp = true;
-		}
+
 
 		CallDeferred("MoveChildObject");
 		//GD.Print(pickupObject.GetParent(), GetParent());
+	}
+	public override void _Input(InputEvent @event)
+	{
+		if (@event is InputEventKey eventKey)
+		{
+			if (Input.IsKeyPressed(Key.E) && PickedUp && eventKey.Pressed)
+			{
+				if (pickupObject.GetParent() != null)
+				{
+					CallDeferred("RemoveChildParent");
+				}
+				CallDeferred("AddChildToObject");
+				PickedUp = false;
+			}
+			if (inPickupRange && Input.IsKeyPressed(Key.E) && !PickedUp && eventKey.Pressed)
+			{
+				if (pickupObject.GetParent() != null)
+				{
+					CallDeferred("RemoveChildParent");
+				}
+				CallDeferred("AddChildToObject");
+				PickedUp = true;
+			}
+
+		}
+
 	}
 	private void Pickup(Node3D body)
 	{

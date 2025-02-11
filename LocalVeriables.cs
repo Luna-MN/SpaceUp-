@@ -11,6 +11,7 @@ public partial class LocalVeriables : Node3D
 	public Pickup oldPickupObject { get; private set; }
 	public Vector3 currentPickupOffset { get; private set; }
 	public Vector3 oldPickupOffset { get; private set; }
+	public Vector3 storedChildPos { get; private set; }
 	[Export]
 	public CharacterBody3D player;
 	// Called when the node enters the scene tree for the first time.
@@ -25,23 +26,17 @@ public partial class LocalVeriables : Node3D
 		localPos = player.Position;
 		Position = localPos;
 
-
-		CallDeferred("MoveChildObject");
+		if (PickedUp)
+		{
+			CallDeferred("MoveChildObject");
+		}
 		//GD.Print(pickupObject.GetParent(), GetParent());
 	}
 	public override void _Input(InputEvent @event)
 	{
 		if (@event is InputEventKey eventKey)
 		{
-			if (Input.IsKeyPressed(Key.E) && PickedUp && eventKey.Pressed)
-			{
-				if (pickupObject.GetParent() != null)
-				{
-					CallDeferred("RemoveChildParent");
-				}
-				CallDeferred("AddChildToObject");
-				PickedUp = false;
-			}
+
 			if (inPickupRange && Input.IsKeyPressed(Key.E) && !PickedUp && eventKey.Pressed)
 			{
 				if (pickupObject.GetParent() != null)
@@ -51,7 +46,15 @@ public partial class LocalVeriables : Node3D
 				CallDeferred("AddChildToObject");
 				PickedUp = true;
 			}
-
+			else if (Input.IsKeyPressed(Key.E) && PickedUp && eventKey.Pressed)
+			{
+				if (pickupObject.GetParent() != null)
+				{
+					CallDeferred("RemoveChildParent");
+				}
+				CallDeferred("AddChildToParent");
+				PickedUp = false;
+			}
 		}
 
 	}
@@ -103,7 +106,9 @@ public partial class LocalVeriables : Node3D
 	}
 	public void AddChildToParent()
 	{
+		storedChildPos = oldPickupObject.GlobalPosition;
 		GetParent().AddChild(oldPickupObject);
+		oldPickupObject.GlobalPosition = storedChildPos;
 		PickedUp = false;
 	}
 }

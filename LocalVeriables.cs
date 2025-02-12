@@ -31,6 +31,11 @@ public partial class LocalVeriables : Node3D
 			CallDeferred("MoveChildObject");
 		}
 		//GD.Print(pickupObject.GetParent(), GetParent());
+		if (oldPickupObject.Position == Vector3.Zero)
+		{
+			oldPickupObject.Position = Position + new Vector3(oldPickupOffset.X, 0, oldPickupOffset.Z);
+		}
+		GD.Print(Position);
 	}
 	public override void _Input(InputEvent @event)
 	{
@@ -95,6 +100,7 @@ public partial class LocalVeriables : Node3D
 	}
 	public void RemoveChildObject()
 	{
+		storedChildPos = oldPickupObject.GlobalPosition;
 		oldPickupObject.GetParent().RemoveChild(oldPickupObject);
 	}
 	public void MoveChildObject()
@@ -106,9 +112,9 @@ public partial class LocalVeriables : Node3D
 	}
 	public void AddChildToParent()
 	{
-		storedChildPos = oldPickupObject.GlobalPosition;
+
 		GetParent().AddChild(oldPickupObject);
-		oldPickupObject.GlobalPosition = storedChildPos;
+
 		PickedUp = false;
 	}
 }

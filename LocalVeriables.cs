@@ -14,6 +14,7 @@ public partial class LocalVeriables : Node3D
 	public Vector3 storedChildPos { get; private set; }
 	[Export]
 	public CharacterBody3D player;
+	public Timer timer;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -38,7 +39,7 @@ public partial class LocalVeriables : Node3D
 		if (@event is InputEventKey eventKey)
 		{
 
-			if (inPickupRange && Input.IsKeyPressed(Key.E) && !PickedUp && eventKey.Pressed)
+			if (inPickupRange && Input.IsKeyPressed(Key.F) && !PickedUp && eventKey.Pressed)
 			{
 				if (pickupObject.GetParent() != null)
 				{
@@ -47,7 +48,7 @@ public partial class LocalVeriables : Node3D
 				CallDeferred("AddChildToObject");
 				PickedUp = true;
 			}
-			else if (Input.IsKeyPressed(Key.E) && PickedUp && eventKey.Pressed)
+			else if (Input.IsKeyPressed(Key.F) && PickedUp && eventKey.Pressed)
 			{
 				if (pickupObject.GetParent() != null)
 				{
@@ -55,6 +56,12 @@ public partial class LocalVeriables : Node3D
 				}
 				CallDeferred("AddChildToParent");
 				PickedUp = false;
+			}
+			else if (Input.IsKeyPressed(Key.F) && PickedUp)
+			{
+				// logic for inteeracting with objects i'll need a bool for being in interaction range
+				// use the created time for holding down the button for interaction time
+
 			}
 		}
 
@@ -95,11 +102,6 @@ public partial class LocalVeriables : Node3D
 		AddChild(oldPickupObject);
 		GD.Print(oldPickupObject.GetParent().Name, Name);
 		PickedUp = true;
-	}
-	public void RemoveChildObject()
-	{
-
-		oldPickupObject.GetParent().RemoveChild(oldPickupObject);
 	}
 	public void MoveChildObject()
 	{

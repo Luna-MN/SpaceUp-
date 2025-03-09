@@ -57,11 +57,14 @@ public partial class LocalVeriables : Node3D
 				CallDeferred("AddChildToParent");
 				PickedUp = false;
 			}
-			else if (Input.IsKeyPressed(Key.E) && PickedUp)
+			if (Input.IsKeyPressed(Key.E) && PickedUp)
 			{
 				// logic for inteeracting with objects i'll need a bool for being in interaction range
 				// use the created time for holding down the button for interaction time
-
+			}
+			else
+			{
+				// reset timer
 			}
 		}
 

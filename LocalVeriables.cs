@@ -19,6 +19,9 @@ public partial class LocalVeriables : Node3D
 	public override void _Ready()
 	{
 		OnPickup = new Callable(this, "Pickup");
+		timer = new Timer();
+		AddChild(timer);
+
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,10 +64,14 @@ public partial class LocalVeriables : Node3D
 			{
 				// logic for inteeracting with objects i'll need a bool for being in interaction range
 				// use the created time for holding down the button for interaction time
+				if (timer.IsStopped())
+				{
+					timer.Start();
+				}
 			}
 			else
 			{
-				// reset timer
+				timer.Stop();
 			}
 		}
 

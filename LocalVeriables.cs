@@ -1,10 +1,11 @@
 using Godot;
+using Microsoft.VisualBasic;
 using System;
 
 public partial class LocalVeriables : Node3D
 {
 	public Vector3 localPos { get; private set; }
-	public Callable OnPickup;
+	public Callable OnPickup, onTimeOut;
 	public bool inPickupRange { get; private set; }
 	public bool PickedUp { get; private set; }
 	public Pickup pickupObject { get; private set; }
@@ -14,13 +15,16 @@ public partial class LocalVeriables : Node3D
 	public Vector3 storedChildPos { get; private set; }
 	[Export]
 	public CharacterBody3D player;
+	public bool interaction { get; private set; }
 	public Timer timer;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		OnPickup = new Callable(this, "Pickup");
+		onTimeOut = new Callable(this, "Reset");
 		timer = new Timer();
 		AddChild(timer);
+		timer.Connect("timeout", onTimeOut);
 
 	}
 
@@ -76,6 +80,13 @@ public partial class LocalVeriables : Node3D
 		}
 
 	}
+	public void IfInteraction()
+	{
+		if (interaction)
+		{
+			// do interaction logic here
+		}
+	}
 	private void Pickup(Node3D body)
 	{
 		if (body is CharacterBody3D)
@@ -128,5 +139,9 @@ public partial class LocalVeriables : Node3D
 		oldPickupObject.Position = new Vector3(storedChildPos.X, 1, storedChildPos.Z) - ((Node3D)GetParent()).GlobalPosition;
 
 		PickedUp = false;
+	}
+	public void OnTimerTimeout()
+	{
+		interaction = true;
 	}
 }

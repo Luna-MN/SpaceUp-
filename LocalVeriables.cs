@@ -17,12 +17,14 @@ public partial class LocalVeriables : Node3D
 	public CharacterBody3D player;
 	public bool interaction { get; private set; }
 	public Timer timer;
+	public bool interactionRange { get; set; }
+	public Node3D interactionObject { get; set; }
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		OnPickup = new Callable(this, "Pickup");
 		onTimeOut = new Callable(this, "Reset");
-		timer = new Timer();
+		timer = new Timer() { WaitTime = 3, Autostart = false, OneShot = true };
 		AddChild(timer);
 		timer.Connect("timeout", onTimeOut);
 
@@ -84,7 +86,10 @@ public partial class LocalVeriables : Node3D
 	{
 		if (interaction)
 		{
+
+			oldPickupObject.QueueFree();
 			// do interaction logic here
+			interaction = false;
 		}
 	}
 	private void Pickup(Node3D body)

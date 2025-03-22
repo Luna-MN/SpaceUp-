@@ -18,7 +18,7 @@ public partial class LocalVeriables : Node3D
 	public bool interaction { get; private set; }
 	public Timer timer;
 	public bool interactionRange { get; set; }
-	public Node3D interactionObject { get; set; }
+	public Interaction interactionObject { get; set; }
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -66,7 +66,7 @@ public partial class LocalVeriables : Node3D
 				CallDeferred("AddChildToParent");
 				PickedUp = false;
 			}
-			if (Input.IsKeyPressed(Key.E) && PickedUp)
+			if (Input.IsKeyPressed(Key.E) && PickedUp && interactionRange)
 			{
 				// logic for inteeracting with objects i'll need a bool for being in interaction range
 				// use the created time for holding down the button for interaction time
@@ -88,6 +88,7 @@ public partial class LocalVeriables : Node3D
 		{
 
 			oldPickupObject.QueueFree();
+			interactionObject.Mesh.Mesh = interactionObject.interactionMesh;
 			// do interaction logic here
 			interaction = false;
 		}

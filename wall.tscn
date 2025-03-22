@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://lvtjqvbcihsr"]
+[gd_scene load_steps=6 format=3 uid="uid://lvtjqvbcihsr"]
 
 [ext_resource type="PackedScene" uid="uid://b2hp37c5gs06v" path="res://Space Station Kit/Models/FBX format/wall.fbx" id="1_nxvg4"]
 [ext_resource type="Script" path="res://Interaction.cs" id="2_e63dj"]
+[ext_resource type="ArrayMesh" uid="uid://draggan0yw3ke" path="res://Space Station Kit/Models/OBJ format/wall-door-banner.obj" id="3_jvk3d"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qoh3x"]
 radius = 1.04989
@@ -9,8 +10,11 @@ radius = 1.04989
 [sub_resource type="BoxShape3D" id="BoxShape3D_nuqia"]
 size = Vector3(1, 0.881412, 0.32837)
 
-[node name="wall" instance=ExtResource("1_nxvg4")]
+[node name="wall" node_paths=PackedStringArray("Area", "Mesh") instance=ExtResource("1_nxvg4")]
 script = ExtResource("2_e63dj")
+Area = NodePath("RootNode/wall/Area3D")
+Mesh = NodePath("RootNode/wall")
+interactionMesh = ExtResource("3_jvk3d")
 
 [node name="Area3D" type="Area3D" parent="RootNode/wall" index="0"]
 

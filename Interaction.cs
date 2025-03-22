@@ -9,6 +9,8 @@ public partial class Interaction : Node3D
 	public MeshInstance3D Mesh { get; set; }
 	[Export]
 	public LocalVeriables localVeriables;
+	[Export]
+	public Mesh interactionMesh { get; set; }
 	public Callable callable, CallableExit;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -26,7 +28,7 @@ public partial class Interaction : Node3D
 	private void AreaEnter(Node3D body)
 	{
 		localVeriables.interactionRange = true;
-		localVeriables.interactionObject = body;
+		localVeriables.interactionObject = this;
 	}
 	private void AreaExit(Node3D body)
 	{

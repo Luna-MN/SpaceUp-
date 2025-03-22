@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkec4a000ipcs"]
+[gd_scene load_steps=9 format=3 uid="uid://dkec4a000ipcs"]
 
 [ext_resource type="PackedScene" uid="uid://1akhfng5pmhg" path="res://Space Station Kit/Models/FBX format/floor-detail.fbx" id="1_786ch"]
 [ext_resource type="Script" path="res://Floor.cs" id="1_r2xs4"]
 [ext_resource type="Script" path="res://Movement.cs" id="3_4c3tf"]
 [ext_resource type="Script" path="res://LocalVeriables.cs" id="3_oh1nl"]
 [ext_resource type="PackedScene" uid="uid://b2eiop4i77eac" path="res://container.tscn" id="5_ymclc"]
+[ext_resource type="PackedScene" uid="uid://lvtjqvbcihsr" path="res://wall.tscn" id="6_gunru"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_krtei"]
 
@@ -44,3 +45,7 @@ fov = 110.169
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.299, 0.855619, -13.662)
 playerVeriables = NodePath("../Local Player")
 pickupOffset = Vector3(0, 1, 1)
+
+[node name="wall" parent="." node_paths=PackedStringArray("localVeriables") instance=ExtResource("6_gunru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.84375, 7)
+localVeriables = NodePath("../Local Player")

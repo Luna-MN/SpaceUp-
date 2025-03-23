@@ -49,8 +49,6 @@ playerVeriables = NodePath("../Local Player")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.84375, 7)
 localVeriables = NodePath("../Local Player")
 
-[node name="Timer" type="Timer" parent="."]
-
 [node name="container-wide2" parent="." node_paths=PackedStringArray("playerVeriables") instance=ExtResource("5_ymclc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39551, 0.855619, -13.662)
 playerVeriables = NodePath("../Local Player")

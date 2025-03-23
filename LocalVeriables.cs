@@ -40,8 +40,6 @@ public partial class LocalVeriables : Node3D
 		{
 			CallDeferred("MoveChildObject");
 		}
-		//GD.Print(pickupObject.GetParent(), GetParent());
-		GD.Print(Position);
 	}
 	public override void _Input(InputEvent @event)
 	{
@@ -68,8 +66,6 @@ public partial class LocalVeriables : Node3D
 			}
 			if (Input.IsKeyPressed(Key.E) && PickedUp && interactionRange)
 			{
-				// logic for inteeracting with objects i'll need a bool for being in interaction range
-				// use the created time for holding down the button for interaction time
 				if (timer.IsStopped())
 				{
 					timer.Start();

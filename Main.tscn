@@ -44,10 +44,17 @@ fov = 110.169
 [node name="container-wide" parent="." node_paths=PackedStringArray("playerVeriables") instance=ExtResource("5_ymclc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.299, 0.855619, -13.662)
 playerVeriables = NodePath("../Local Player")
-pickupOffset = Vector3(0, 1, 1)
 
 [node name="wall" parent="." node_paths=PackedStringArray("localVeriables") instance=ExtResource("6_gunru")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.84375, 7)
 localVeriables = NodePath("../Local Player")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="container-wide2" parent="." node_paths=PackedStringArray("playerVeriables") instance=ExtResource("5_ymclc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39551, 0.855619, -13.662)
+playerVeriables = NodePath("../Local Player")
+
+[node name="wall2" parent="." node_paths=PackedStringArray("localVeriables") instance=ExtResource("6_gunru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29581, 0.744176, 9.96556)
+localVeriables = NodePath("../Local Player")

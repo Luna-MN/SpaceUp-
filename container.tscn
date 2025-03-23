@@ -7,9 +7,10 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_wljaa"]
 radius = 1.82161
 
-[node name="container-wide" node_paths=PackedStringArray("pickupConnect") instance=ExtResource("1_g1mow")]
+[node name="container-wide" node_paths=PackedStringArray("pickupArea") instance=ExtResource("1_g1mow")]
 script = ExtResource("2_7dc0p")
-pickupConnect = NodePath("RootNode/Area3D")
+pickupArea = NodePath("RootNode/Area3D")
+pickupOffset = Vector3(0, 1, 1)
 
 [node name="Area3D" type="Area3D" parent="RootNode" index="1"]
 script = ExtResource("3_c2wt7")

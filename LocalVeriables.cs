@@ -23,7 +23,7 @@ public partial class LocalVeriables : Node3D
 	public override void _Ready()
 	{
 		OnPickup = new Callable(this, "Pickup");
-		onTimeOut = new Callable(this, "Reset");
+		onTimeOut = new Callable(this, "OnTimerTimeout");
 		timer = new Timer() { WaitTime = 3, Autostart = false, OneShot = true };
 		AddChild(timer);
 		timer.Connect("timeout", onTimeOut);
@@ -35,7 +35,7 @@ public partial class LocalVeriables : Node3D
 	{
 		localPos = player.Position;
 		Position = localPos;
-
+		IfInteraction();
 		if (PickedUp)
 		{
 			CallDeferred("MoveChildObject");
@@ -86,11 +86,10 @@ public partial class LocalVeriables : Node3D
 	{
 		if (interaction)
 		{
-
 			oldPickupObject.QueueFree();
 			interactionObject.Mesh.Mesh = interactionObject.interactionMesh;
-			// do interaction logic here
 			interaction = false;
+			PickedUp = false;
 		}
 	}
 	private void Pickup(Node3D body)
@@ -146,7 +145,7 @@ public partial class LocalVeriables : Node3D
 
 		PickedUp = false;
 	}
-	public void OnTimerTimeout()
+	private void OnTimerTimeout()
 	{
 		interaction = true;
 	}

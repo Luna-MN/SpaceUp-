@@ -49,3 +49,5 @@ pickupOffset = Vector3(0, 1, 1)
 [node name="wall" parent="." node_paths=PackedStringArray("localVeriables") instance=ExtResource("6_gunru")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.84375, 7)
 localVeriables = NodePath("../Local Player")
+
+[node name="Timer" type="Timer" parent="."]

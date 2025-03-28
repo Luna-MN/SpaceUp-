@@ -66,9 +66,16 @@ public partial class LocalVeriables : Node3D
 			}
 			if (Input.IsKeyPressed(Key.E) && PickedUp && interactionRange)
 			{
-				if (timer.IsStopped())
+				if (((string)pickupObject.Name).Contains(interactionObject.interactionScene))
 				{
-					timer.Start();
+					if (timer.IsStopped())
+					{
+						timer.Start();
+					}
+				}
+				else
+				{
+					timer.Stop();
 				}
 			}
 			else

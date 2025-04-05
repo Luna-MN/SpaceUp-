@@ -23,20 +23,15 @@ public partial class ChangeObject : MeshInstance3D
 	}
 	private void OnBodyEntered(Node3D body)
 	{
-		if (body is LocalVeriables player)
-		{
-			// set picked up object here and make it so that it can't have a pickup object
-			LocalVeriables.changeObjectRange = true;
-			LocalVeriables.changeObject = this;
-		}
+		GD.Print("Entered");
+		LocalVeriables.changeObjectRange = true;
+
+		LocalVeriables.changeObject = this;
 	}
 	private void OnBodyExited(Node3D body)
 	{
-		if (body is LocalVeriables player)
-		{
-			// reset picked up object here and make it so that it can have a pickup object
-			LocalVeriables.changeObjectRange = false;
-			LocalVeriables.changeObject = null;
-		}
+		GD.Print("Exited");
+		LocalVeriables.changeObjectRange = false;
+		LocalVeriables.changeObject = null;
 	}
 }

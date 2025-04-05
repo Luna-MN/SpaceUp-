@@ -8,6 +8,7 @@ public partial class LocalVeriables : Node3D
 	public Callable OnPickup, onTimeOut;
 	public bool inPickupRange { get; private set; }
 	public bool changeObjectRange { get; set; }
+	public bool changeObjectGrabbed { get; private set; }
 	public bool PickedUp { get; private set; }
 	public Pickup pickupObject { get; private set; }
 	public ChangeObject changeObject { get; set; }
@@ -69,21 +70,23 @@ public partial class LocalVeriables : Node3D
 			}
 			else if (Input.IsKeyPressed(Key.F) && !PickedUp && eventKey.Pressed && changeObjectRange)
 			{
-				if (pickupObject.GetParent() != null)
+				if (changeObject.GetParent() != null)
 				{
 					CallDeferred("RemoveChildParent");
 				}
 				CallDeferred("AddChildToObject");
 				PickedUp = true;
+				changeObjectGrabbed = true;
 			}
 			else if (Input.IsKeyPressed(Key.F) && PickedUp && eventKey.Pressed && changeObjectRange)
 			{
-				if (pickupObject.GetParent() != null)
+				if (changeObject.GetParent() != null)
 				{
 					CallDeferred("RemoveChildParent");
 				}
 				CallDeferred("AddChildToParent");
 				PickedUp = false;
+				changeObjectGrabbed = false;
 			}
 			if (Input.IsKeyPressed(Key.E) && PickedUp && interactionRange)
 			{
@@ -172,7 +175,7 @@ public partial class LocalVeriables : Node3D
 	}
 	public void MoveChildObject()
 	{
-		if (changeObjectRange)
+		if (changeObjectGrabbed)
 		{
 			oldchangeObject.Position = Position + oldPickupOffset;
 			return;

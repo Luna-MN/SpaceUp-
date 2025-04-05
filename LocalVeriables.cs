@@ -54,39 +54,40 @@ public partial class LocalVeriables : Node3D
 			{
 				if (pickupObject.GetParent() != null)
 				{
-					CallDeferred("RemoveChildParent");
+					CallDeferred("RemoveChildParent", new Variant[] { false });
 				}
-				CallDeferred("AddChildToObject");
+				CallDeferred("AddChildToObject", new Variant[] { false });
 				PickedUp = true;
 			}
 			else if (Input.IsKeyPressed(Key.F) && PickedUp && eventKey.Pressed && !changeObjectRange)
 			{
 				if (pickupObject.GetParent() != null)
 				{
-					CallDeferred("RemoveChildParent");
+					CallDeferred("RemoveChildParent", new Variant[] { false });
 				}
-				CallDeferred("AddChildToParent");
+				CallDeferred("AddChildToParent", new Variant[] { false });
 				PickedUp = false;
 			}
 			else if (Input.IsKeyPressed(Key.F) && !PickedUp && eventKey.Pressed && changeObjectRange)
 			{
+				changeObjectGrabbed = true;
 				if (changeObject.GetParent() != null)
 				{
-					CallDeferred("RemoveChildParent");
+					CallDeferred("RemoveChildParent", new Variant[] { true });
 				}
-				CallDeferred("AddChildToObject");
+				CallDeferred("AddChildToObject", new Variant[] { true });
 				PickedUp = true;
-				changeObjectGrabbed = true;
+
 			}
 			else if (Input.IsKeyPressed(Key.F) && PickedUp && eventKey.Pressed && changeObjectRange)
 			{
-				if (changeObject.GetParent() != null)
-				{
-					CallDeferred("RemoveChildParent");
-				}
-				CallDeferred("AddChildToParent");
-				PickedUp = false;
 				changeObjectGrabbed = false;
+				if (oldchangeObject.GetParent() != null)
+				{
+					CallDeferred("RemoveChildParent", new Variant[] { true });
+					CallDeferred("AddChildToParent", new Variant[] { true });
+				}
+				PickedUp = false;
 			}
 			if (Input.IsKeyPressed(Key.E) && PickedUp && interactionRange)
 			{
@@ -139,9 +140,9 @@ public partial class LocalVeriables : Node3D
 		pickupObject = null;
 		currentPickupOffset = Vector3.Zero;
 	}
-	public void RemoveChildParent()
+	public void RemoveChildParent(bool change)
 	{
-		if (changeObjectRange)
+		if (change)
 		{
 			if (changeObject != null)
 			{
@@ -152,25 +153,31 @@ public partial class LocalVeriables : Node3D
 			oldchangeObject.GetParent().RemoveChild(oldchangeObject);
 			return;
 		}
-		if (pickupObject != null)
+		else
 		{
-			oldPickupObject = pickupObject;
-			oldPickupOffset = currentPickupOffset;
+			if (pickupObject != null)
+			{
+				oldPickupObject = pickupObject;
+				oldPickupOffset = currentPickupOffset;
+			}
+			storedChildPos = oldPickupObject.GlobalPosition;
+			oldPickupObject.GetParent().RemoveChild(oldPickupObject);
 		}
-		storedChildPos = oldPickupObject.GlobalPosition;
-		oldPickupObject.GetParent().RemoveChild(oldPickupObject);
+
 	}
-	public void AddChildToObject()
+	public void AddChildToObject(bool change)
 	{
-		if (changeObjectRange)
+		if (change)
 		{
 			AddChild(oldchangeObject);
 			GD.Print(oldchangeObject.GetParent().Name, Name);
-			PickedUp = true;
-			return;
+
 		}
-		AddChild(oldPickupObject);
-		GD.Print(oldPickupObject.GetParent().Name, Name);
+		else
+		{
+			AddChild(oldPickupObject);
+			GD.Print(oldPickupObject.GetParent().Name, Name);
+		}
 		PickedUp = true;
 	}
 	public void MoveChildObject()
@@ -185,22 +192,24 @@ public partial class LocalVeriables : Node3D
 			oldPickupObject.Position = Position + oldPickupOffset;
 		}
 	}
-	public void AddChildToParent()
+	public void AddChildToParent(bool change)
 	{
 
-		if (changeObjectRange)
+		if (change)
 		{
 			GetParent().AddChild(oldchangeObject);
 			oldchangeObject.Position = new Vector3(storedChildPos.X, 1, storedChildPos.Z) - ((Node3D)GetParent()).GlobalPosition;
 			PickedUp = false;
-			return;
+			oldchangeObject = null;
+		}
+		else
+		{
+			GetParent().AddChild(oldPickupObject);
+			oldPickupObject.Position = new Vector3(storedChildPos.X, 1, storedChildPos.Z) - ((Node3D)GetParent()).GlobalPosition;
+			oldPickupObject = null;
+			PickedUp = false;
 		}
 
-		GetParent().AddChild(oldPickupObject);
-
-		oldPickupObject.Position = new Vector3(storedChildPos.X, 1, storedChildPos.Z) - ((Node3D)GetParent()).GlobalPosition;
-
-		PickedUp = false;
 	}
 	private void OnTimerTimeout()
 	{

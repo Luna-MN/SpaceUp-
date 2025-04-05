@@ -46,10 +46,6 @@ fov = 110.169
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.299, 0.855619, -13.662)
 playerVeriables = NodePath("../Local Player")
 
-[node name="wall" parent="." node_paths=PackedStringArray("localVeriables") instance=ExtResource("6_gunru")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.84375, 7)
-localVeriables = NodePath("../Local Player")
-
 [node name="container-wide2" parent="." node_paths=PackedStringArray("playerVeriables") instance=ExtResource("5_ymclc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39551, 0.855619, -13.662)
 playerVeriables = NodePath("../Local Player")
@@ -57,9 +53,22 @@ playerVeriables = NodePath("../Local Player")
 [node name="BlasterI" parent="." node_paths=PackedStringArray("LocalVeriables") instance=ExtResource("7_5qtkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6349, 1, 0)
 LocalVeriables = NodePath("../Local Player")
+offset = Vector3(1, 0, 1)
 
-[node name="wall2" parent="." node_paths=PackedStringArray("Area", "Mesh", "localVeriables") instance=ExtResource("6_gunru")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99618, 0.84375, 7)
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="wall" parent="Walls" node_paths=PackedStringArray("localVeriables") instance=ExtResource("6_gunru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.84375, 22.2675)
+localVeriables = NodePath("../../Local Player")
+
+[node name="wall2" parent="Walls" node_paths=PackedStringArray("Area", "Mesh", "localVeriables") instance=ExtResource("6_gunru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99618, 0.84375, 22.2675)
 Area = NodePath("../wall/RootNode/wall/Area3D")
 Mesh = NodePath("../wall/RootNode/wall")
-localVeriables = NodePath("../Local Player")
+localVeriables = NodePath("../../Local Player")
+
+[node name="wall3" parent="Walls" node_paths=PackedStringArray("Area", "Mesh", "localVeriables") instance=ExtResource("6_gunru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96021, 0.84375, 22.2675)
+Area = NodePath("../wall/RootNode/wall/Area3D")
+Mesh = NodePath("../wall/RootNode/wall")
+localVeriables = NodePath("../../Local Player")

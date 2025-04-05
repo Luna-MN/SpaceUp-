@@ -15,6 +15,10 @@ script = ExtResource("2_e63dj")
 Area = NodePath("RootNode/wall/Area3D")
 Mesh = NodePath("RootNode/wall")
 interactionMesh = ExtResource("3_jvk3d")
+interactionScene = "container"
+
+[node name="wall" parent="RootNode" index="0"]
+transform = Transform3D(4, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="RootNode/wall" index="0"]
 

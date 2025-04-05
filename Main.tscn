@@ -20,7 +20,7 @@ script = ExtResource("1_r2xs4")
 floorScene = ExtResource("1_786ch")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.963849, 0.266448, 0, -0.266448, 0.963849, 0, 3.05349, 6.22252)
+transform = Transform3D(1, 0, 0, 0, 0.963849, 0.266448, 0, -0.266448, 0.963849, 0, -2.39405, 6.22252)
 
 [node name="Local Player" type="Node3D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("3_oh1nl")
@@ -47,17 +47,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.299, 0.855619, -13.662)
 playerVeriables = NodePath("../Local Player")
 
 [node name="wall" parent="." node_paths=PackedStringArray("localVeriables") instance=ExtResource("6_gunru")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 1, 2, 0.84375, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.84375, 7)
 localVeriables = NodePath("../Local Player")
 
 [node name="container-wide2" parent="." node_paths=PackedStringArray("playerVeriables") instance=ExtResource("5_ymclc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39551, 0.855619, -13.662)
 playerVeriables = NodePath("../Local Player")
 
-[node name="wall2" parent="." node_paths=PackedStringArray("localVeriables") instance=ExtResource("6_gunru")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29581, 0.744176, 9.96556)
-localVeriables = NodePath("../Local Player")
-
 [node name="BlasterI" parent="." node_paths=PackedStringArray("LocalVeriables") instance=ExtResource("7_5qtkn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6349, 1, 0)
 LocalVeriables = NodePath("../Local Player")
+
+[node name="wall2" parent="." node_paths=PackedStringArray("Area", "Mesh", "localVeriables") instance=ExtResource("6_gunru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99618, 0.84375, 7)
+Area = NodePath("../wall/RootNode/wall/Area3D")
+Mesh = NodePath("../wall/RootNode/wall")
+localVeriables = NodePath("../Local Player")

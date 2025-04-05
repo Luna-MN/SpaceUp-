@@ -12,6 +12,7 @@ public partial class Interaction : Node3D
 	[Export]
 	public Mesh interactionMesh { get; set; }
 	public Callable callable, CallableExit;
+	[Export]
 	public string interactionScene;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

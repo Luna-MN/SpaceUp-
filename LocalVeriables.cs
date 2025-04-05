@@ -7,8 +7,11 @@ public partial class LocalVeriables : Node3D
 	public Vector3 localPos { get; private set; }
 	public Callable OnPickup, onTimeOut;
 	public bool inPickupRange { get; private set; }
+	public bool changeObjectRange { get; set; }
 	public bool PickedUp { get; private set; }
 	public Pickup pickupObject { get; private set; }
+	public ChangeObject changeObject { get; set; }
+	public ChangeObject oldchangeObject { get; set; }
 	public Pickup oldPickupObject { get; private set; }
 	public Vector3 currentPickupOffset { get; private set; }
 	public Vector3 oldPickupOffset { get; private set; }
@@ -46,7 +49,7 @@ public partial class LocalVeriables : Node3D
 		if (@event is InputEventKey eventKey)
 		{
 
-			if (inPickupRange && Input.IsKeyPressed(Key.F) && !PickedUp && eventKey.Pressed)
+			if (inPickupRange && Input.IsKeyPressed(Key.F) && !PickedUp && eventKey.Pressed && !changeObjectRange)
 			{
 				if (pickupObject.GetParent() != null)
 				{
@@ -55,7 +58,25 @@ public partial class LocalVeriables : Node3D
 				CallDeferred("AddChildToObject");
 				PickedUp = true;
 			}
-			else if (Input.IsKeyPressed(Key.F) && PickedUp && eventKey.Pressed)
+			else if (Input.IsKeyPressed(Key.F) && PickedUp && eventKey.Pressed && !changeObjectRange)
+			{
+				if (pickupObject.GetParent() != null)
+				{
+					CallDeferred("RemoveChildParent");
+				}
+				CallDeferred("AddChildToParent");
+				PickedUp = false;
+			}
+			else if (Input.IsKeyPressed(Key.F) && !PickedUp && eventKey.Pressed && changeObjectRange)
+			{
+				if (pickupObject.GetParent() != null)
+				{
+					CallDeferred("RemoveChildParent");
+				}
+				CallDeferred("AddChildToObject");
+				PickedUp = true;
+			}
+			else if (Input.IsKeyPressed(Key.F) && PickedUp && eventKey.Pressed && changeObjectRange)
 			{
 				if (pickupObject.GetParent() != null)
 				{

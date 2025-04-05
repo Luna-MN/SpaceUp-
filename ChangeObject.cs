@@ -7,6 +7,8 @@ public partial class ChangeObject : MeshInstance3D
 	public Area3D Area3D;
 	[Export]
 	public LocalVeriables LocalVeriables;
+	[Export]
+	public Vector3 offset;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -24,6 +26,8 @@ public partial class ChangeObject : MeshInstance3D
 		if (body is LocalVeriables player)
 		{
 			// set picked up object here and make it so that it can't have a pickup object
+			LocalVeriables.changeObjectRange = true;
+			LocalVeriables.changeObject = this;
 		}
 	}
 	private void OnBodyExited(Node3D body)
@@ -31,6 +35,8 @@ public partial class ChangeObject : MeshInstance3D
 		if (body is LocalVeriables player)
 		{
 			// reset picked up object here and make it so that it can have a pickup object
+			LocalVeriables.changeObjectRange = false;
+			LocalVeriables.changeObject = null;
 		}
 	}
 }

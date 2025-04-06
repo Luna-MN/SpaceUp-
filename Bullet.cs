@@ -11,6 +11,7 @@ public partial class Bullet : RigidBody3D
 	public MeshInstance3D meshInstance; // Reference to the MeshInstance3D node
 	public float time;
 	public Vector3 direction;
+	public float Bdamage;
 	public override void _Ready()
 	{
 
@@ -40,10 +41,11 @@ public partial class Bullet : RigidBody3D
 
 		collision();
 	}
-	public void Fire(Vector3 direction)
+	public void Fire(Vector3 direction, float damage)
 	{
 		this.direction = direction;
 		LookAt(GlobalTransform.Origin + direction, Vector3.Forward); // Rotate so the top faces the direction of travel
+		Bdamage = damage;
 		LinearVelocity = direction * speed; // Set the bullet's velocity
 	}
 	public void collision()
@@ -54,7 +56,8 @@ public partial class Bullet : RigidBody3D
 		{
 			if (km.GetCollider() is Enemy)
 			{
-				GD.Print("Hit enemy");
+				// Handle collision with enemy
+				(km.GetCollider() as Enemy)?.TakeDamage(Bdamage); // Call the TakeDamage method on the enemy
 				QueueFree(); // Destroy the enemy on collision
 			}
 			QueueFree(); // Destroy the bullet on collision

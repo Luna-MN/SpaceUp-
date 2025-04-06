@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkec4a000ipcs"]
+[gd_scene load_steps=11 format=3 uid="uid://dkec4a000ipcs"]
 
 [ext_resource type="PackedScene" uid="uid://1akhfng5pmhg" path="res://Space Station Kit/Models/FBX format/floor-detail.fbx" id="1_786ch"]
 [ext_resource type="Script" path="res://Floor.cs" id="1_r2xs4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b2eiop4i77eac" path="res://container.tscn" id="5_ymclc"]
 [ext_resource type="PackedScene" uid="uid://lvtjqvbcihsr" path="res://wall.tscn" id="6_gunru"]
 [ext_resource type="PackedScene" uid="uid://dwatnjk0n685h" path="res://blaster.tscn" id="7_5qtkn"]
+[ext_resource type="PackedScene" uid="uid://drdvbj4nrh1on" path="res://Enemy.tscn" id="8_kcm1p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_krtei"]
 
@@ -52,7 +53,7 @@ LocalVeriables = NodePath("../Local Player")
 
 [node name="BlasterI" parent="." node_paths=PackedStringArray("LocalVeriables") instance=ExtResource("7_5qtkn")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.6349, 1, 0)
-offset = Vector3(1, 0, 1)
+offset = Vector3(0.5, 0.5, 0.5)
 LocalVeriables = NodePath("../Local Player")
 
 [node name="Walls" type="Node3D" parent="."]
@@ -72,3 +73,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96021, 0.84375, 22.2675)
 Area = NodePath("../wall/RootNode/wall/Area3D")
 Mesh = NodePath("../wall/RootNode/wall")
 localVeriables = NodePath("../../Local Player")
+
+[node name="RigidBody3D" parent="." instance=ExtResource("8_kcm1p")]

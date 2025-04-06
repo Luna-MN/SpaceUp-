@@ -7,8 +7,6 @@ public partial class Movement : CharacterBody3D
 	public float speed = 5.0f;
 	public bool inhibitMovement = false;
 
-	// Get the gravity from the project settings to be synced with RigidBody nodes.
-	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -35,16 +33,14 @@ public partial class Movement : CharacterBody3D
 
 		if (newVelocity.Length() > 0)
 		{
-			// Calculate the horizontal direction (ignore Y-axis)
+
 			Vector3 horizontalDirection = new Vector3(newVelocity.X, 0, newVelocity.Z).Normalized();
 
-			// Calculate the target Y rotation
 			float targetYRotation = Mathf.Atan2(horizontalDirection.X, horizontalDirection.Z);
 
-			// Smoothly interpolate the current Y rotation towards the target
 			Rotation = new Vector3(
 				Rotation.X,
-				Mathf.LerpAngle(Rotation.Y, targetYRotation, 7f * (float)delta), // 5f is the smoothing speed
+				Mathf.LerpAngle(Rotation.Y, targetYRotation, 7f * (float)delta),
 				Rotation.Z
 			);
 		}

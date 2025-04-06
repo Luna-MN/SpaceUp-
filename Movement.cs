@@ -6,12 +6,13 @@ public partial class Movement : CharacterBody3D
 	[Export]
 	public float speed = 5.0f;
 	public bool inhibitMovement = false;
-
+	[Export]
+	public Camera3D camera;
 
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector3 newVelocity = Vector3.Zero;
-
+		camera.GlobalPosition = GlobalPosition + new Vector3(0, 6, 5);
 		if (Input.IsKeyPressed(Key.W))
 		{
 			newVelocity -= Vector3.Back * speed;

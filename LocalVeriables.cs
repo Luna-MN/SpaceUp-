@@ -86,11 +86,11 @@ public partial class LocalVeriables : Node3D
 				}
 				PickedUp = false;
 			}
-			else if (Input.IsKeyPressed(Key.E) && PickedUp && eventKey.Pressed && objectI is blaster)
+			else if (Input.IsKeyPressed(Key.E) && PickedUp && eventKey.Pressed && oldObject is blaster)
 			{
 				(objectI as blaster).Fire();
 			}
-			if (Input.IsKeyPressed(Key.E) && PickedUp && interactionRange && objectI is Pickup)
+			if (Input.IsKeyPressed(Key.E) && PickedUp && interactionRange && oldObject is Pickup)
 			{
 				if (((string)objectI.Name).Contains(interactionObject.interactionScene))
 				{
@@ -108,6 +108,7 @@ public partial class LocalVeriables : Node3D
 			{
 				timer.Stop();
 			}
+
 		}
 
 	}
@@ -117,6 +118,7 @@ public partial class LocalVeriables : Node3D
 		{
 			oldObject.QueueFree();
 			interactionObject.Mesh.Mesh = interactionObject.interactionMesh;
+			interactionObject.Damaged = false;
 			interaction = false;
 			PickedUp = false;
 		}

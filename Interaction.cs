@@ -14,6 +14,12 @@ public partial class Interaction : Node3D
 	public Callable callable, CallableExit;
 	[Export]
 	public string interactionScene;
+	[Export]
+	public bool Damaged { get; set; }
+	[Export]
+	public Mesh DamagedMesh { get; set; }
+	[Export]
+	public CpuParticles3D Particles { get; set; }
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -26,16 +32,35 @@ public partial class Interaction : Node3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if (Damaged)
+		{
+			Mesh.Mesh = DamagedMesh;
+			Particles.Visible = true;
+			Particles.Emitting = true;
+		}
+		else
+		{
+			Particles.Emitting = false;
+			Particles.Visible = false;
+			GD.Print(Particles.Visible);
+			Mesh.Mesh = interactionMesh;
+		}
 	}
 	private void AreaEnter(Node3D body)
 	{
-		localVeriables.interactionRange = true;
-		localVeriables.interactionObject = this;
+		if (body is CharacterBody3D)
+		{
+			localVeriables.interactionRange = true;
+			localVeriables.interactionObject = this;
+		}
 
 	}
 	private void AreaExit(Node3D body)
 	{
-		localVeriables.interactionRange = false;
-		localVeriables.interactionObject = null;
+		if (body is CharacterBody3D)
+		{
+			localVeriables.interactionRange = false;
+			localVeriables.interactionObject = null;
+		}
 	}
 }

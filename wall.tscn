@@ -1,24 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://lvtjqvbcihsr"]
+[gd_scene load_steps=9 format=3 uid="uid://lvtjqvbcihsr"]
 
 [ext_resource type="PackedScene" uid="uid://b2hp37c5gs06v" path="res://Space Station Kit/Models/FBX format/wall.fbx" id="1_nxvg4"]
 [ext_resource type="Script" path="res://Interaction.cs" id="2_e63dj"]
-[ext_resource type="ArrayMesh" uid="uid://draggan0yw3ke" path="res://Space Station Kit/Models/OBJ format/wall-door-banner.obj" id="3_jvk3d"]
+[ext_resource type="ArrayMesh" uid="uid://v8kkvhxq3gxp" path="res://Wall_Damaged.obj" id="4_406pw"]
+[ext_resource type="ArrayMesh" uid="uid://d7mxfdwm1634" path="res://Space Station Kit/Models/OBJ format/wall.obj" id="4_fl7om"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qoh3x"]
 radius = 1.04989
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nuqia"]
-size = Vector3(4, 3.28774, 0.32837)
+size = Vector3(4, 3.28774, 0.553587)
 
-[node name="wall" node_paths=PackedStringArray("Area", "Mesh") instance=ExtResource("1_nxvg4")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekbrr"]
+albedo_color = Color(0.752941, 0.647059, 0, 1)
+emission_enabled = true
+emission = Color(0.690196, 0.52549, 0.0745098, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_57nm4"]
+material = SubResource("StandardMaterial3D_ekbrr")
+radius = 0.01
+height = 0.02
+
+[node name="wall" node_paths=PackedStringArray("Area", "Mesh", "Particles") instance=ExtResource("1_nxvg4")]
 script = ExtResource("2_e63dj")
 Area = NodePath("RootNode/wall/Area3D")
 Mesh = NodePath("RootNode/wall")
-interactionMesh = ExtResource("3_jvk3d")
+interactionMesh = ExtResource("4_fl7om")
 interactionScene = "container"
+DamagedMesh = ExtResource("4_406pw")
+Particles = NodePath("CPUParticles3D")
 
 [node name="wall" parent="RootNode" index="0"]
-transform = Transform3D(4, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(4, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("4_fl7om")
 
 [node name="Area3D" type="Area3D" parent="RootNode/wall" index="0"]
 
@@ -31,3 +45,11 @@ shape = SubResource("SphereShape3D_qoh3x")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62801, 0)
 shape = SubResource("BoxShape3D_nuqia")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." index="1"]
+transform = Transform3D(-0.329872, 0.901422, 0.280399, -1.25546e-08, -0.297025, 0.95487, 0.944026, 0.314985, 0.0979802, 0, 1.40462, 0.245438)
+visible = false
+mesh = SubResource("SphereMesh_57nm4")
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 4.0

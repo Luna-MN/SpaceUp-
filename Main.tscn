@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkec4a000ipcs"]
+[gd_scene load_steps=10 format=3 uid="uid://dkec4a000ipcs"]
 
 [ext_resource type="PackedScene" uid="uid://1akhfng5pmhg" path="res://Space Station Kit/Models/FBX format/floor-detail.fbx" id="1_786ch"]
 [ext_resource type="Script" path="res://Floor.cs" id="1_r2xs4"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b2eiop4i77eac" path="res://container.tscn" id="5_ymclc"]
 [ext_resource type="PackedScene" uid="uid://lvtjqvbcihsr" path="res://wall.tscn" id="6_gunru"]
 [ext_resource type="PackedScene" uid="uid://dwatnjk0n685h" path="res://blaster.tscn" id="7_5qtkn"]
-[ext_resource type="Script" path="res://Object.cs" id="8_hok74"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_krtei"]
 
@@ -73,6 +72,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96021, 0.84375, 22.2675)
 Area = NodePath("../wall/RootNode/wall/Area3D")
 Mesh = NodePath("../wall/RootNode/wall")
 localVeriables = NodePath("../../Local Player")
-
-[node name="Node3D" type="Node3D" parent="."]
-script = ExtResource("8_hok74")

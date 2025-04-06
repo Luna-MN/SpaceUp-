@@ -12,7 +12,6 @@ public partial class LocalVeriables : Node3D
 	public bool PickedUp { get; private set; }
 	public Object objectI { get; set; }
 	public Object oldObject { get; private set; }
-	public Vector3 currentPickupOffset { get; private set; }
 	public Vector3 oldPickupOffset { get; private set; }
 	public Vector3 storedChildPos { get; private set; }
 	[Export]
@@ -130,11 +129,6 @@ public partial class LocalVeriables : Node3D
 			GD.Print(objectI);
 		}
 
-	}
-	public void SetObject(Object obj)
-	{
-		objectI = obj;
-		currentPickupOffset = obj.offset;
 	}
 	public void RemoveChildParent(bool change)
 	{

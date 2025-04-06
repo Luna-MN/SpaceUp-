@@ -13,6 +13,12 @@ public partial class ChangeObject : Object
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+
+	}
+	public void connect()
+	{
+		Area3D.Connect("body_entered", new Callable(this, "OnBodyEntered"));
+		Area3D.Connect("body_exited", new Callable(this, "OnBodyExited"));
 	}
 	private void OnBodyEntered(Node3D body)
 	{

@@ -87,11 +87,11 @@ public partial class LocalVeriables : Node3D
 				}
 				PickedUp = false;
 			}
-			else if (Input.IsKeyPressed(Key.E) && PickedUp && eventKey.Pressed && changeObjectRange)
+			else if (Input.IsKeyPressed(Key.E) && PickedUp && eventKey.Pressed && objectI is blaster)
 			{
-
+				(objectI as blaster).Fire();
 			}
-			if (Input.IsKeyPressed(Key.E) && PickedUp && interactionRange)
+			if (Input.IsKeyPressed(Key.E) && PickedUp && interactionRange && objectI is Pickup)
 			{
 				if (((string)objectI.Name).Contains(interactionObject.interactionScene))
 				{

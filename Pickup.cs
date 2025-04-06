@@ -16,15 +16,22 @@ public partial class Pickup : Object
 	}
 	private void OnBodyEntered(Node3D body)
 	{
-		LocalVeriables.changeObjectRange = true;
-		LocalVeriables.objectI = this;
+		if (body is CharacterBody3D)
+		{
+			LocalVeriables.changeObjectRange = true;
+			LocalVeriables.objectI = this;
+		}
+
 	}
 	private void OnBodyExited(Node3D body)
 	{
-		LocalVeriables.inPickupRange = false;
-		if (LocalVeriables.objectI == this)
+		if (body is CharacterBody3D)
 		{
-			LocalVeriables.objectI = null;
+			LocalVeriables.inPickupRange = false;
+			if (LocalVeriables.objectI == this)
+			{
+				LocalVeriables.objectI = null;
+			}
 		}
 	}
 }

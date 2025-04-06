@@ -52,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39551, 0.855619, -13.662)
 LocalVeriables = NodePath("../Local Player")
 
 [node name="BlasterI" parent="." node_paths=PackedStringArray("LocalVeriables") instance=ExtResource("7_5qtkn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6349, 1, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.6349, 1, 0)
 offset = Vector3(1, 0, 1)
 LocalVeriables = NodePath("../Local Player")
 

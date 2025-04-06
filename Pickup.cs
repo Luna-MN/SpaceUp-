@@ -27,9 +27,9 @@ public partial class Pickup : Object
 	{
 		if (body is CharacterBody3D)
 		{
-			LocalVeriables.inPickupRange = false;
 			if (LocalVeriables.objectI == this)
 			{
+				LocalVeriables.inPickupRange = false;
 				LocalVeriables.objectI = null;
 			}
 		}

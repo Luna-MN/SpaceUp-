@@ -1,19 +1,13 @@
 using Godot;
 using System;
 
-public partial class Pickup : Node3D
+public partial class Pickup : Object
 {
-	[Export]
-	public LocalVeriables playerVeriables;
-	[Export]
-	public Area3D pickupArea;
-	[Export]
-	public Vector3 pickupOffset;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		pickupArea.Connect("body_entered", new Callable(this, "OnBodyEntered"));
-		pickupArea.Connect("body_exited", new Callable(this, "OnBodyExited"));
+		Area3D.Connect("body_entered", new Callable(this, "OnBodyEntered"));
+		Area3D.Connect("body_exited", new Callable(this, "OnBodyExited"));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,11 +16,15 @@ public partial class Pickup : Node3D
 	}
 	private void OnBodyEntered(Node3D body)
 	{
-		playerVeriables.SetObject(this);
-		playerVeriables.OnPickup.Call(body);
+		LocalVeriables.changeObjectRange = true;
+		LocalVeriables.objectI = this;
 	}
 	private void OnBodyExited(Node3D body)
 	{
-		playerVeriables.Reset();
+		LocalVeriables.inPickupRange = false;
+		if (LocalVeriables.objectI == this)
+		{
+			LocalVeriables.objectI = null;
+		}
 	}
 }

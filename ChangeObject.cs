@@ -1,14 +1,8 @@
 using Godot;
 using System;
 
-public partial class ChangeObject : MeshInstance3D
+public partial class ChangeObject : Object
 {
-	[Export]
-	public Area3D Area3D;
-	[Export]
-	public LocalVeriables LocalVeriables;
-	[Export]
-	public Vector3 offset;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -25,13 +19,16 @@ public partial class ChangeObject : MeshInstance3D
 	{
 		GD.Print("Entered");
 		LocalVeriables.changeObjectRange = true;
-
-		LocalVeriables.changeObject = this;
+		LocalVeriables.objectI = this;
 	}
 	private void OnBodyExited(Node3D body)
 	{
 		GD.Print("Exited");
 		LocalVeriables.changeObjectRange = false;
-		LocalVeriables.changeObject = null;
+		if (LocalVeriables.objectI == this)
+		{
+			LocalVeriables.objectI = null;
+		}
+
 	}
 }

@@ -6,14 +6,12 @@ public partial class LocalVeriables : Node3D
 {
 	public Vector3 localPos { get; private set; }
 	public Callable OnPickup, onTimeOut;
-	public bool inPickupRange { get; private set; }
+	public bool inPickupRange { get; set; }
 	public bool changeObjectRange { get; set; }
 	public bool changeObjectGrabbed { get; private set; }
 	public bool PickedUp { get; private set; }
-	public Pickup pickupObject { get; private set; }
-	public ChangeObject changeObject { get; set; }
-	public ChangeObject oldchangeObject { get; set; }
-	public Pickup oldPickupObject { get; private set; }
+	public Object objectI { get; set; }
+	public Object oldObject { get; private set; }
 	public Vector3 currentPickupOffset { get; private set; }
 	public Vector3 oldPickupOffset { get; private set; }
 	public Vector3 storedChildPos { get; private set; }
@@ -52,7 +50,7 @@ public partial class LocalVeriables : Node3D
 
 			if (inPickupRange && Input.IsKeyPressed(Key.F) && !PickedUp && eventKey.Pressed && !changeObjectRange)
 			{
-				if (pickupObject.GetParent() != null)
+				if (objectI.GetParent() != null)
 				{
 					CallDeferred("RemoveChildParent", new Variant[] { false });
 				}
@@ -61,7 +59,7 @@ public partial class LocalVeriables : Node3D
 			}
 			else if (Input.IsKeyPressed(Key.F) && PickedUp && eventKey.Pressed && !changeObjectRange)
 			{
-				if (pickupObject.GetParent() != null)
+				if (objectI.GetParent() != null)
 				{
 					CallDeferred("RemoveChildParent", new Variant[] { false });
 				}
@@ -71,7 +69,7 @@ public partial class LocalVeriables : Node3D
 			else if (Input.IsKeyPressed(Key.F) && !PickedUp && eventKey.Pressed && changeObjectRange)
 			{
 				changeObjectGrabbed = true;
-				if (changeObject.GetParent() != null)
+				if (objectI.GetParent() != null)
 				{
 					CallDeferred("RemoveChildParent", new Variant[] { true });
 				}
@@ -82,7 +80,7 @@ public partial class LocalVeriables : Node3D
 			else if (Input.IsKeyPressed(Key.F) && PickedUp && eventKey.Pressed && changeObjectRange)
 			{
 				changeObjectGrabbed = false;
-				if (oldchangeObject.GetParent() != null)
+				if (objectI.GetParent() != null)
 				{
 					CallDeferred("RemoveChildParent", new Variant[] { true });
 					CallDeferred("AddChildToParent", new Variant[] { true });
@@ -91,7 +89,7 @@ public partial class LocalVeriables : Node3D
 			}
 			if (Input.IsKeyPressed(Key.E) && PickedUp && interactionRange)
 			{
-				if (((string)pickupObject.Name).Contains(interactionObject.interactionScene))
+				if (((string)objectI.Name).Contains(interactionObject.interactionScene))
 				{
 					if (timer.IsStopped())
 					{
@@ -114,7 +112,7 @@ public partial class LocalVeriables : Node3D
 	{
 		if (interaction)
 		{
-			oldPickupObject.QueueFree();
+			oldObject.QueueFree();
 			interactionObject.Mesh.Mesh = interactionObject.interactionMesh;
 			interaction = false;
 			PickedUp = false;
@@ -125,91 +123,46 @@ public partial class LocalVeriables : Node3D
 		if (body is CharacterBody3D)
 		{
 			inPickupRange = true;
-			GD.Print(pickupObject);
+			GD.Print(objectI);
 		}
 
 	}
-	public void SetObject(Pickup obj)
+	public void SetObject(Object obj)
 	{
-		pickupObject = obj;
-		currentPickupOffset = obj.pickupOffset;
-	}
-	public void Reset()
-	{
-		inPickupRange = false;
-		pickupObject = null;
-		currentPickupOffset = Vector3.Zero;
+		objectI = obj;
+		currentPickupOffset = obj.offset;
 	}
 	public void RemoveChildParent(bool change)
 	{
-		if (change)
+		if (objectI != null)
 		{
-			if (changeObject != null)
-			{
-				oldchangeObject = changeObject;
-				oldPickupOffset = oldchangeObject.offset;
-			}
-			storedChildPos = oldchangeObject.GlobalPosition;
-			oldchangeObject.GetParent().RemoveChild(oldchangeObject);
-			return;
+			oldObject = objectI;
+			oldPickupOffset = objectI.offset;
 		}
-		else
-		{
-			if (pickupObject != null)
-			{
-				oldPickupObject = pickupObject;
-				oldPickupOffset = currentPickupOffset;
-			}
-			storedChildPos = oldPickupObject.GlobalPosition;
-			oldPickupObject.GetParent().RemoveChild(oldPickupObject);
-		}
+		storedChildPos = oldObject.GlobalPosition;
+		oldObject.GetParent().RemoveChild(oldObject);
 
 	}
 	public void AddChildToObject(bool change)
 	{
-		if (change)
-		{
-			AddChild(oldchangeObject);
-			GD.Print(oldchangeObject.GetParent().Name, Name);
 
-		}
-		else
-		{
-			AddChild(oldPickupObject);
-			GD.Print(oldPickupObject.GetParent().Name, Name);
-		}
+		AddChild(oldObject);
+		GD.Print(oldObject.GetParent().Name, Name);
 		PickedUp = true;
 	}
 	public void MoveChildObject()
 	{
-		if (changeObjectGrabbed)
+		if (oldObject.GetParent().Name == Name)
 		{
-			oldchangeObject.Position = Position + oldPickupOffset;
-			return;
-		}
-		if (oldPickupObject.GetParent().Name == Name)
-		{
-			oldPickupObject.Position = Position + oldPickupOffset;
+			oldObject.Position = Position + oldPickupOffset;
 		}
 	}
 	public void AddChildToParent(bool change)
 	{
-
-		if (change)
-		{
-			GetParent().AddChild(oldchangeObject);
-			oldchangeObject.Position = new Vector3(storedChildPos.X, 1, storedChildPos.Z) - ((Node3D)GetParent()).GlobalPosition;
-			PickedUp = false;
-			oldchangeObject = null;
-		}
-		else
-		{
-			GetParent().AddChild(oldPickupObject);
-			oldPickupObject.Position = new Vector3(storedChildPos.X, 1, storedChildPos.Z) - ((Node3D)GetParent()).GlobalPosition;
-			oldPickupObject = null;
-			PickedUp = false;
-		}
-
+		GetParent().AddChild(oldObject);
+		oldObject.Position = new Vector3(storedChildPos.X, 1, storedChildPos.Z) - ((Node3D)GetParent()).GlobalPosition;
+		oldObject = null;
+		PickedUp = false;
 	}
 	private void OnTimerTimeout()
 	{

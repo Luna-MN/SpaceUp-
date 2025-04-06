@@ -9,6 +9,7 @@ radius = 3.0
 [node name="BlasterI" type="MeshInstance3D" node_paths=PackedStringArray("Area3D")]
 mesh = ExtResource("1_md3k6")
 script = ExtResource("2_k0ec7")
+offset = Vector3(1, 1, 1)
 Area3D = NodePath("Area3D")
 
 [node name="Area3D" type="Area3D" parent="."]

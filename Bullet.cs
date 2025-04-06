@@ -8,6 +8,7 @@ public partial class Bullet : RigidBody3D
 	[Export]
 	public float speed = 10f; // Speed of the bullet
 	public float time;
+	public Vector3 direction;
 	public override void _Ready()
 	{
 	}
@@ -20,17 +21,14 @@ public partial class Bullet : RigidBody3D
 		{
 			QueueFree(); // Destroy the bullet after 5 seconds
 		}
-		var km = MoveAndCollide(Vector3.Back * time);
+		var km = MoveAndCollide(direction * time);
 		if (km != null)
 		{
 			QueueFree(); // Destroy the bullet on collision
 		}
 	}
-	public void Fire()
+	public void Fire(Vector3 direction)
 	{
-
-	}
-	private void OnBodyEntered(Node body)
-	{
+		this.direction = direction;
 	}
 }

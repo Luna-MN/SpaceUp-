@@ -22,7 +22,7 @@ public partial class ChangeObject : Object
 	}
 	private void OnBodyEntered(Node3D body)
 	{
-		if (body is CharacterBody3D)
+		if (body is CharacterBody3D && !LocalVeriables.PickedUp)
 		{
 			GD.Print("Entered");
 			LocalVeriables.changeObjectRange = true;
@@ -35,7 +35,7 @@ public partial class ChangeObject : Object
 		{
 			GD.Print("Exited");
 			LocalVeriables.changeObjectRange = false;
-			if (LocalVeriables.objectI == this)
+			if (LocalVeriables.objectI == this && LocalVeriables.oldObject == this && !LocalVeriables.PickedUp)
 			{
 				LocalVeriables.objectI = null;
 			}

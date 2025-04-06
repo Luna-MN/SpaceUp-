@@ -24,7 +24,7 @@ public partial class blaster : ChangeObject
 			GetParent().GetParent().AddChild(bullet);
 			bullet.GlobalPosition = GlobalPosition;
 			bullet.GlobalRotation = GlobalRotation;
-			bullet.Fire();
+			bullet.Fire(-GlobalTransform.Basis.Z.Normalized());
 		}
 		else
 		{

@@ -32,6 +32,23 @@ public partial class Movement : CharacterBody3D
 		}
 
 		Velocity = newVelocity;
+
+		if (newVelocity.Length() > 0)
+		{
+			// Calculate the horizontal direction (ignore Y-axis)
+			Vector3 horizontalDirection = new Vector3(newVelocity.X, 0, newVelocity.Z).Normalized();
+
+			// Calculate the target Y rotation
+			float targetYRotation = Mathf.Atan2(horizontalDirection.X, horizontalDirection.Z);
+
+			// Smoothly interpolate the current Y rotation towards the target
+			Rotation = new Vector3(
+				Rotation.X,
+				Mathf.LerpAngle(Rotation.Y, targetYRotation, 7f * (float)delta), // 5f is the smoothing speed
+				Rotation.Z
+			);
+		}
+
 		MoveAndSlide();
 	}
 }

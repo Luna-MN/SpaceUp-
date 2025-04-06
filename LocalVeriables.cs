@@ -144,15 +144,16 @@ public partial class LocalVeriables : Node3D
 	public void AddChildToObject(bool change)
 	{
 
-		AddChild(oldObject);
+		player.AddChild(oldObject);
+		oldObject.Position = new Vector3(0, 1, 0);
 		GD.Print(oldObject.GetParent().Name, Name);
 		PickedUp = true;
 	}
 	public void MoveChildObject()
 	{
-		if (oldObject.GetParent().Name == Name)
+		if (oldObject.GetParent().Name == player.Name)
 		{
-			oldObject.Position = Position + oldPickupOffset;
+			oldObject.Position = oldPickupOffset;
 		}
 	}
 	public void AddChildToParent(bool change)

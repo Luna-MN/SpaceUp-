@@ -16,7 +16,7 @@ public partial class Pickup : Object
 	}
 	private void OnBodyEntered(Node3D body)
 	{
-		if (body is CharacterBody3D)
+		if (body is CharacterBody3D && !LocalVeriables.PickedUp)
 		{
 			LocalVeriables.changeObjectRange = true;
 			LocalVeriables.objectI = this;
@@ -27,7 +27,7 @@ public partial class Pickup : Object
 	{
 		if (body is CharacterBody3D)
 		{
-			if (LocalVeriables.objectI == this)
+			if (LocalVeriables.objectI == this && LocalVeriables.oldObject == this && !LocalVeriables.PickedUp)
 			{
 				LocalVeriables.inPickupRange = false;
 				LocalVeriables.objectI = null;

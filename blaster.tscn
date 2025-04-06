@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwatnjk0n685h"]
 
 [ext_resource type="ArrayMesh" uid="uid://ckxjtxrp5fek" path="res://Blaster Kit/Models/OBJ format/blasterI.obj" id="1_md3k6"]
-[ext_resource type="Script" path="res://ChangeObject.cs" id="2_k0ec7"]
+[ext_resource type="Script" path="res://blaster.cs" id="2_pam7n"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5sqqq"]
 radius = 3.0
 
 [node name="BlasterI" type="MeshInstance3D" node_paths=PackedStringArray("Area3D")]
 mesh = ExtResource("1_md3k6")
-script = ExtResource("2_k0ec7")
+script = ExtResource("2_pam7n")
 offset = Vector3(1, 1, 1)
 Area3D = NodePath("Area3D")
 

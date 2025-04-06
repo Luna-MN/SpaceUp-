@@ -87,6 +87,10 @@ public partial class LocalVeriables : Node3D
 				}
 				PickedUp = false;
 			}
+			else if (Input.IsKeyPressed(Key.E) && PickedUp && eventKey.Pressed && changeObjectRange)
+			{
+
+			}
 			if (Input.IsKeyPressed(Key.E) && PickedUp && interactionRange)
 			{
 				if (((string)objectI.Name).Contains(interactionObject.interactionScene))

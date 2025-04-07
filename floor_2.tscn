@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciy4vsqxe40bu"]
+
+[ext_resource type="ArrayMesh" uid="uid://cmmtsjfphjkdx" path="res://Space Station Kit/Models/OBJ format/floor.obj" id="1_rn3q5"]
+
+[node name="Floor2" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36586, -9.53674e-07, -3.82338)
+mesh = ExtResource("1_rn3q5")

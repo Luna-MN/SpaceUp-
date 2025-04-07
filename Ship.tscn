@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://croa1o7dyo23c"]
+
+[ext_resource type="PackedScene" uid="uid://ciy4vsqxe40bu" path="res://floor_2.tscn" id="1_d4f3x"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Floors" type="Node3D" parent="."]
+
+[node name="Floor2" parent="Floors" instance=ExtResource("1_d4f3x")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+skeleton = NodePath("../..")
+
+[node name="Floor9" parent="Floors" instance=ExtResource("1_d4f3x")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+skeleton = NodePath("../Floor2")
+
+[node name="Floor10" parent="Floors" instance=ExtResource("1_d4f3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0065217, 2.38419e-07, 4.0012)
+skeleton = NodePath("../Floor2")
+
+[node name="Floor11" parent="Floors" instance=ExtResource("1_d4f3x")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, -0.0130434, 4.76837e-07, -2.99761)
+skeleton = NodePath("../Floor2")
+
+[node name="Floor12" parent="Floors" instance=ExtResource("1_d4f3x")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 0.00767851, 0.00422835, -3.99427)
+skeleton = NodePath("../Floor2")

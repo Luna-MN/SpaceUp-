@@ -42,7 +42,6 @@ public partial class Interaction : Node3D
 		{
 			Particles.Emitting = false;
 			Particles.Visible = false;
-			GD.Print(Particles.Visible);
 			Mesh.Mesh = interactionMesh;
 		}
 	}

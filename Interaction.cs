@@ -20,7 +20,9 @@ public partial class Interaction : Node3D
 	public Mesh DamagedMesh { get; set; }
 	[Export]
 	public CpuParticles3D Particles { get; set; }
-	// Called when the node enters the scene tree for the first time.
+	[Export]
+	public int damageChance = 25; // Chance of being damaged (0-100)
+								  // Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		callable = new Callable(this, "AreaEnter");

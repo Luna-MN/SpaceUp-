@@ -11,50 +11,52 @@ Walls = NodePath("Walls")
 [node name="Floors" type="Node3D" parent="."]
 
 [node name="Floor2" parent="Floors" instance=ExtResource("1_d4f3x")]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 8.895, 0, 0, 0)
 skeleton = NodePath("../..")
-
-[node name="Floor9" parent="Floors" instance=ExtResource("1_d4f3x")]
-transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
-skeleton = NodePath("../Floor2")
-
-[node name="Floor10" parent="Floors" instance=ExtResource("1_d4f3x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0065217, 2.38419e-07, 4.0012)
-skeleton = NodePath("../Floor2")
-
-[node name="Floor11" parent="Floors" instance=ExtResource("1_d4f3x")]
-transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
-skeleton = NodePath("../Floor2")
-
-[node name="Floor12" parent="Floors" instance=ExtResource("1_d4f3x")]
-transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-skeleton = NodePath("../Floor2")
 
 [node name="Walls" type="Node3D" parent="."]
 
 [node name="wall" parent="Walls" instance=ExtResource("3_sa7cr")]
-transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.00402641, -0.00365925, -4.27165)
+transform = Transform3D(1.25, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.00402641, -0.00365925, -4.27165)
 
 [node name="wall2" parent="Walls" node_paths=PackedStringArray("Area", "Mesh", "Particles") instance=ExtResource("3_sa7cr")]
-transform = Transform3D(-2.40413e-08, 0, 0.745, 0, 0.745, 0, -0.55, 0, -3.2565e-08, 2.24981, -0.00365925, -1.40465)
+transform = Transform3D(-2.40413e-08, 0, 0.745, 0, 0.745, 0, -0.55, 0, -3.2565e-08, 2.24981, -0.00365925, -3.37056)
 Area = NodePath("../wall/RootNode/wall/Area3D")
 Mesh = NodePath("../wall/RootNode/wall")
 Particles = NodePath("../wall/CPUParticles3D")
 
 [node name="wall3" parent="Walls" node_paths=PackedStringArray("Area", "Mesh", "Particles") instance=ExtResource("3_sa7cr")]
-transform = Transform3D(-2.40413e-08, 0, 0.745, 0, 0.745, 0, -0.55, 0, -3.2565e-08, 2.24981, -0.00365925, 0.771869)
+transform = Transform3D(-3.01609e-08, 0, 0.745, 0, 0.745, 0, -0.69, 0, -3.2565e-08, 2.25912, -0.00365925, 1.07923)
 Area = NodePath("../wall/RootNode/wall/Area3D")
 Mesh = NodePath("../wall/RootNode/wall")
 Particles = NodePath("../wall/CPUParticles3D")
 
 [node name="wall4" parent="Walls" node_paths=PackedStringArray("Area", "Mesh", "Particles") instance=ExtResource("3_sa7cr")]
-transform = Transform3D(-2.40413e-08, 0, 0.745, 0, 0.745, 0, -0.55, 0, -3.2565e-08, -2.27944, -0.00365925, 0.771869)
+transform = Transform3D(-2.40413e-08, 0, 0.745, 0, 0.745, 0, -0.55, 0, -3.2565e-08, -2.27944, -0.00365925, 1.41288)
 Area = NodePath("../wall/RootNode/wall/Area3D")
 Mesh = NodePath("../wall/RootNode/wall")
 Particles = NodePath("../wall/CPUParticles3D")
 
 [node name="wall5" parent="Walls" node_paths=PackedStringArray("Area", "Mesh", "Particles") instance=ExtResource("3_sa7cr")]
-transform = Transform3D(0.55, 0, -1.3026e-07, 0, 0.745, 0, 9.61651e-08, 0, 0.745, 0.0812254, -0.00365925, 3.43075)
+transform = Transform3D(0.55, 0, -1.3026e-07, 0, 0.745, 0, 9.61651e-08, 0, 0.745, 1.00499, -0.00365925, 4.2167)
+Area = NodePath("../wall/RootNode/wall/Area3D")
+Mesh = NodePath("../wall/RootNode/wall")
+Particles = NodePath("../wall/CPUParticles3D")
+
+[node name="wall6" parent="Walls" node_paths=PackedStringArray("Area", "Mesh", "Particles") instance=ExtResource("3_sa7cr")]
+transform = Transform3D(-2.40413e-08, 0, 0.745, 0, 0.745, 0, -0.55, 0, -3.2565e-08, 2.24981, -0.00365925, -1.18419)
+Area = NodePath("../wall/RootNode/wall/Area3D")
+Mesh = NodePath("../wall/RootNode/wall")
+Particles = NodePath("../wall/CPUParticles3D")
+
+[node name="wall7" parent="Walls" node_paths=PackedStringArray("Area", "Mesh", "Particles") instance=ExtResource("3_sa7cr")]
+transform = Transform3D(-2.40413e-08, 0, 0.745, 0, 0.745, 0, -0.55, 0, -3.2565e-08, 2.24981, -0.00365925, 3.33966)
+Area = NodePath("../wall/RootNode/wall/Area3D")
+Mesh = NodePath("../wall/RootNode/wall")
+Particles = NodePath("../wall/CPUParticles3D")
+
+[node name="wall8" parent="Walls" node_paths=PackedStringArray("Area", "Mesh", "Particles") instance=ExtResource("3_sa7cr")]
+transform = Transform3D(0.62, 0, -1.3026e-07, 0, 0.745, 0, 1.08404e-07, 0, 0.745, -1.25632, -0.00365925, 4.2167)
 Area = NodePath("../wall/RootNode/wall/Area3D")
 Mesh = NodePath("../wall/RootNode/wall")
 Particles = NodePath("../wall/CPUParticles3D")

@@ -32,10 +32,10 @@ public partial class RoomNode : Node3D
 	{
 		RandomNumberGenerator rng = new RandomNumberGenerator();
 		padding = new Vector4I(
-			rng.RandiRange(2, 3),
-			rng.RandiRange(2, 3),
-			rng.RandiRange(2, 3),
-			rng.RandiRange(2, 3)
+			rng.RandiRange(1, 2),
+			rng.RandiRange(1, 2),
+			rng.RandiRange(1, 2),
+			rng.RandiRange(1, 2)
 		);
 		float splitRatio = rng.RandfRange(0.3f, 0.7f);
 		bool splitHorizontal = size.Y >= size.X;
@@ -82,11 +82,9 @@ public partial class RoomNode : Node3D
 				{ "left", leftChild.GetCenter() },
 				{ "right", rightChild.GetCenter() }
 			});
+			paths.RemoveAll(path => path.ContainsValue(GetCenter()));
 		}
 
-	}
-	public override void _Ready()
-	{
 	}
 	public bool IsInsidePadding(int x, int y, RoomNode leaf, Vector4I padding)
 	{

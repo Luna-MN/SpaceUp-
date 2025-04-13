@@ -40,20 +40,21 @@ public partial class BSPShip : Node3D
 					}
 					// Create a cube mesh
 					BoxMesh boxMesh = new BoxMesh();
-					boxMesh.Size = new Vector3(tileSize, tileSize, tileSize);
+
+					// Make cubes slightly larger to overlap and prevent black lines
+					boxMesh.Size = new Vector3(tileSize + 0.2f, tileSize, tileSize + 0.2f);
 
 					// Create a mesh instance
 					MeshInstance3D meshInstance = new MeshInstance3D();
 					meshInstance.Mesh = boxMesh;
 					meshInstance.MaterialOverride = new StandardMaterial3D { AlbedoColor = randomColor };
 
-					// Position the cube
+					// Position the cube - use exact multiples of tileSize to avoid floating point errors
 					meshInstance.Position = new Vector3(
-						leaf.position.X * tileSize + X * tileSize,
+						Mathf.Round(leaf.position.X * tileSize + X * tileSize + tileSize / 2),
 						0,
-						leaf.position.Y * tileSize + Y * tileSize
+						Mathf.Round(leaf.position.Y * tileSize + Y * tileSize + tileSize / 2)
 					);
-
 					AddChild(meshInstance);
 				}
 			}
@@ -68,15 +69,15 @@ public partial class BSPShip : Node3D
 			// Create a more direct path with L-shaped corridors instead of diagonal lines
 			// First, create a horizontal segment
 			CreatePathSegment(
-				new Vector3(start.X * tileSize, tileSize * 0.6f, start.Y * tileSize),
-				new Vector3(end.X * tileSize, tileSize * 0.6f, start.Y * tileSize),
+				new Vector3(start.X * tileSize, 0.6f, start.Y * tileSize),
+				new Vector3(end.X * tileSize, 0.6f, start.Y * tileSize),
 				true
 			);
 
 			// Then create a vertical segment
 			CreatePathSegment(
-				new Vector3(end.X * tileSize, tileSize * 0.6f, start.Y * tileSize),
-				new Vector3(end.X * tileSize, tileSize * 0.6f, end.Y * tileSize),
+				new Vector3(end.X * tileSize, 0.6f, start.Y * tileSize),
+				new Vector3(end.X * tileSize, 0.6f, end.Y * tileSize),
 				false
 			);
 		}
@@ -98,7 +99,7 @@ public partial class BSPShip : Node3D
 		}
 		else
 		{
-			boxMesh.Size = new Vector3(tileSize * 0.5f, tileSize * 0.2f, distance);
+			boxMesh.Size = new Vector3I((int)(tileSize * 0.5f), (int)(tileSize * 0.2f), (int)distance);
 		}
 
 		// Create a mesh instance

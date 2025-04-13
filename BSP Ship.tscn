@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8oscw5seqkte"]
+
+[ext_resource type="Script" path="res://BSPShip.cs" id="1_p2xdk"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_p2xdk")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.185718, 0.982603, 0, -0.982603, 0.185718, 0, 104.8, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.691324, 0.722545, 0, -0.722545, 0.691324, 0, 13.0785, 11)

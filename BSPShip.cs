@@ -14,7 +14,7 @@ public partial class BSPShip : Node3D
 		rootNode.split(4, paths);
 		EnsureAllRoomsConnected();
 		Draw();
-
+		GD.Print(OS.GetExecutablePath());
 
 	}
 

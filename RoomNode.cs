@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 public partial class RoomNode : Node3D
 {
@@ -8,6 +9,7 @@ public partial class RoomNode : Node3D
 	public RoomNode rightChild;
 	public Vector2I position;
 	public Vector2I size;
+	public Vector4I padding;
 
 	public RoomNode(Vector2I position, Vector2I size)
 	{
@@ -26,9 +28,15 @@ public partial class RoomNode : Node3D
 		}
 	}
 	// Called when the node enters the scene tree for the first time.
-	public void split(int remaining)
+	public void split(int remaining, List<Dictionary<string, Vector2I>> paths)
 	{
 		RandomNumberGenerator rng = new RandomNumberGenerator();
+		padding = new Vector4I(
+			rng.RandiRange(2, 3),
+			rng.RandiRange(2, 3),
+			rng.RandiRange(2, 3),
+			rng.RandiRange(2, 3)
+		);
 		float splitRatio = rng.RandfRange(0.3f, 0.7f);
 		bool splitHorizontal = size.Y >= size.X;
 
@@ -67,12 +75,25 @@ public partial class RoomNode : Node3D
 		// Only recurse if children were successfully created
 		if (leftChild != null && rightChild != null && remaining > 0)
 		{
-			leftChild.split(remaining - 1);
-			rightChild.split(remaining - 1);
+			leftChild.split(remaining - 1, paths);
+			rightChild.split(remaining - 1, paths);
+			paths.Add(new Dictionary<string, Vector2I>
+			{
+				{ "left", leftChild.GetCenter() },
+				{ "right", rightChild.GetCenter() }
+			});
 		}
+
 	}
 	public override void _Ready()
 	{
 	}
-
+	public bool IsInsidePadding(int x, int y, RoomNode leaf, Vector4I padding)
+	{
+		return x <= padding.X || y <= padding.Y || x >= leaf.size.X - padding.Z || y >= leaf.size.Y - padding.W;
+	}
+	public Vector2I GetCenter()
+	{
+		return new Vector2I(position.X + size.X / 2, position.Y + size.Y / 2);
+	}
 }

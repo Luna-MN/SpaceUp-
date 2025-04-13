@@ -9,6 +9,7 @@ public partial class BSPShip : Node3D
 	public override void _Ready()
 	{
 		rootNode = new RoomNode(new Vector2I(0, 0), new Vector2I(60, 30));
+		rootNode.split(3);
 		Draw();
 	}
 
@@ -16,6 +17,16 @@ public partial class BSPShip : Node3D
 	{
 		foreach (RoomNode leaf in rootNode.GetLeaves())
 		{
+			Random random = new Random();
+			Color randomColor = new Color(
+				(float)random.NextDouble(),
+				(float)random.NextDouble(),
+				(float)random.NextDouble()
+			);
+
+			float halfWidth = leaf.size.X * tileSize / 2.0f;
+			float halfDepth = leaf.size.Y * tileSize / 2.0f;
+
 			MeshInstance3D mesh = new MeshInstance3D()
 			{
 				Mesh = new BoxMesh()
@@ -24,12 +35,18 @@ public partial class BSPShip : Node3D
 				},
 				MaterialOverride = new StandardMaterial3D()
 				{
-					AlbedoColor = new Color(0.5f, 0.5f, 0.5f)
+					AlbedoColor = randomColor
 				},
 			};
-			leaf.AddChild(mesh);
-			leaf.Position = new Vector3(leaf.position.X * tileSize, 0, leaf.position.Y * tileSize);
-			AddChild(leaf);
+
+			// Position the mesh in 3D space, accounting for the center-point positioning
+			mesh.Position = new Vector3(
+				leaf.position.X * tileSize + halfWidth,  // X center
+				0,                                      // Y position (height)
+				leaf.position.Y * tileSize + halfDepth   // Z center
+			);
+
+			AddChild(mesh);
 		}
 	}
 }

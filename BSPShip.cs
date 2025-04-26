@@ -14,7 +14,7 @@ public partial class BSPShip : Node3D
 		rootNode.split(4, paths);
 		EnsureAllRoomsConnected();
 		Draw();
-
+		CreateWallsAndDoors();
 	}
 
 	public void Draw()
@@ -81,6 +81,7 @@ public partial class BSPShip : Node3D
 			);
 		}
 		#endregion
+
 	}
 	// Helper method to create a single path segment
 	private void CreatePathSegment(Vector3 start, Vector3 end, bool horizontal)
@@ -183,6 +184,326 @@ public partial class BSPShip : Node3D
 		}
 	}
 	#region Path finding
+	#region wall and doors
+	// Improved wall and door creation methods
+	private void CreateWallsAndDoors()
+	{
+		// First clear any existing walls and doors (in case of regeneration)
+		foreach (Node child in GetChildren())
+		{
+			if (((string)child.Name).Contains("Wall") || ((string)child.Name).Contains("Door"))
+			{
+				child.QueueFree();
+			}
+		}
+
+		List<Vector3> doorPositions = GetAllDoorPositions();
+
+		// Create walls for each room
+		foreach (RoomNode leaf in rootNode.GetLeaves())
+		{
+			CreateRoomWalls(leaf, doorPositions);
+		}
+
+		// Create doors at all door positions
+		foreach (Vector3 doorPos in doorPositions)
+		{
+			// Determine door orientation by checking nearby walls
+			bool isVertical = IsNearVerticalWall(doorPos);
+			CreateDoor(doorPos, isVertical);
+		}
+	}
+
+	private List<Vector3> GetAllDoorPositions()
+	{
+		List<Vector3> doorPositions = new List<Vector3>();
+
+		// Get path intersections with rooms
+		doorPositions.AddRange(GetRoomPathIntersections());
+
+		// Get path endpoints (where paths connect to rooms)
+		foreach (var path in paths)
+		{
+			Vector2I start = path["left"];
+			Vector2I end = path["right"];
+
+			// Calculate the L-shaped path corner
+			Vector2I corner = new Vector2I(end.X, start.Y);
+
+			// Add door positions at room boundaries
+			AddDoorAtRoomBoundary(start, corner, doorPositions);
+			AddDoorAtRoomBoundary(corner, end, doorPositions);
+		}
+
+		return doorPositions;
+	}
+
+	private void AddDoorAtRoomBoundary(Vector2I from, Vector2I to, List<Vector3> doorPositions)
+	{
+		// Find which room the 'from' point is in
+		RoomNode targetRoom = null;
+		foreach (RoomNode room in rootNode.GetLeaves())
+		{
+			if (IsPointInRoom(from, room))
+			{
+				targetRoom = room;
+				break;
+			}
+		}
+
+		if (targetRoom != null)
+		{
+			// Determine direction of the path
+			bool isHorizontal = from.Y == to.Y;
+
+			// Find the boundary point
+			Vector2I doorPos;
+			if (isHorizontal)
+			{
+				// Horizontal path - check if going left or right
+				if (from.X < to.X)
+					doorPos = new Vector2I(targetRoom.position.X + targetRoom.size.X, from.Y);
+				else
+					doorPos = new Vector2I(targetRoom.position.X, from.Y);
+			}
+			else
+			{
+				// Vertical path - check if going up or down
+				if (from.Y < to.Y)
+					doorPos = new Vector2I(from.X, targetRoom.position.Y + targetRoom.size.Y);
+				else
+					doorPos = new Vector2I(from.X, targetRoom.position.Y);
+			}
+
+			doorPositions.Add(new Vector3(doorPos.X * tileSize, 0.6f, doorPos.Y * tileSize));
+		}
+	}
+
+	private bool IsPointInRoom(Vector2I point, RoomNode room)
+	{
+		return point.X >= room.position.X &&
+			   point.X < room.position.X + room.size.X &&
+			   point.Y >= room.position.Y &&
+			   point.Y < room.position.Y + room.size.Y;
+	}
+
+	private bool IsNearVerticalWall(Vector3 point)
+	{
+		// Check if there are walls closer in X direction than Z direction
+		float closestXWall = float.MaxValue;
+		float closestZWall = float.MaxValue;
+
+		foreach (RoomNode room in rootNode.GetLeaves())
+		{
+			float minX = room.position.X * tileSize;
+			float maxX = (room.position.X + room.size.X) * tileSize;
+			float minZ = room.position.Y * tileSize;
+			float maxZ = (room.position.Y + room.size.Y) * tileSize;
+
+			// Check distance to vertical walls (X boundaries)
+			float distToXWall = Math.Min(
+				Math.Abs(point.X - minX),
+				Math.Abs(point.X - maxX)
+			);
+
+			// Check distance to horizontal walls (Z boundaries)
+			float distToZWall = Math.Min(
+				Math.Abs(point.Z - minZ),
+				Math.Abs(point.Z - maxZ)
+			);
+
+			closestXWall = Math.Min(closestXWall, distToXWall);
+			closestZWall = Math.Min(closestZWall, distToZWall);
+		}
+
+		// If closer to X walls, door should be vertical (rotating around Y)
+		return closestXWall < closestZWall;
+	}
+
+	private void CreateRoomWalls(RoomNode room, List<Vector3> doorPositions)
+	{
+		int wallHeight = (int)(tileSize * 1.5f);
+		float wallThickness = tileSize * 0.2f;
+
+		// Calculate room boundaries in world coordinates
+		float minX = room.position.X * tileSize;
+		float minZ = room.position.Y * tileSize;
+		float maxX = minX + room.size.X * tileSize;
+		float maxZ = minZ + room.size.Y * tileSize;
+
+		// North wall (along minZ)
+		CreateWallWithDoors(
+			new Vector3(minX, wallHeight / 2, minZ),
+			new Vector3(maxX, wallHeight / 2, minZ),
+			doorPositions,
+			false
+		);
+
+		// South wall (along maxZ)
+		CreateWallWithDoors(
+			new Vector3(minX, wallHeight / 2, maxZ),
+			new Vector3(maxX, wallHeight / 2, maxZ),
+			doorPositions,
+			false
+		);
+
+		// East wall (along maxX)
+		CreateWallWithDoors(
+			new Vector3(maxX, wallHeight / 2, minZ),
+			new Vector3(maxX, wallHeight / 2, maxZ),
+			doorPositions,
+			true
+		);
+
+		// West wall (along minX)
+		CreateWallWithDoors(
+			new Vector3(minX, wallHeight / 2, minZ),
+			new Vector3(minX, wallHeight / 2, maxZ),
+			doorPositions,
+			true
+		);
+	}
+
+	private void CreateWallWithDoors(Vector3 start, Vector3 end, List<Vector3> doorPositions, bool isVertical)
+	{
+		// Wall properties
+		int wallHeight = (int)(tileSize * 1.5f);
+		float wallThickness = tileSize * 0.2f;
+		float doorWidth = tileSize * 1.2f;
+
+		List<Vector3> wallDoors = new List<Vector3>();
+
+		// Find doors on this wall
+		foreach (Vector3 door in doorPositions)
+		{
+			if (IsPointOnWallSegment(door, start, end))
+			{
+				wallDoors.Add(door);
+			}
+		}
+
+		if (wallDoors.Count == 0)
+		{
+			// No doors - create single wall
+			CreateSingleWall(start, end, wallHeight, wallThickness, isVertical);
+			return;
+		}
+
+		// Sort doors along the wall
+		Vector3 direction = (end - start).Normalized();
+		wallDoors.Sort((a, b) =>
+			((a - start).Dot(direction)).CompareTo((b - start).Dot(direction)));
+
+		// Create wall segments between doors
+		Vector3 segmentStart = start;
+
+		foreach (Vector3 door in wallDoors)
+		{
+			// Wall section before door
+			Vector3 doorStart = door - direction * (doorWidth / 2);
+			if ((doorStart - segmentStart).Length() > tileSize * 0.5f)
+			{
+				CreateSingleWall(segmentStart, doorStart, wallHeight, wallThickness, isVertical);
+			}
+
+			// Move to after door
+			segmentStart = door + direction * (doorWidth / 2);
+		}
+
+		// Final segment after last door
+		if ((end - segmentStart).Length() > tileSize * 0.5f)
+		{
+			CreateSingleWall(segmentStart, end, wallHeight, wallThickness, isVertical);
+		}
+	}
+
+	private bool IsPointOnWallSegment(Vector3 point, Vector3 wallStart, Vector3 wallEnd)
+	{
+		// Get the closest point on the line segment to the given point
+		Vector3 line = wallEnd - wallStart;
+		float lineLength = line.Length();
+		Vector3 lineDir = line / lineLength;
+
+		// Project the point onto the line
+		Vector3 pointToWallStart = point - wallStart;
+		float projection = pointToWallStart.Dot(lineDir);
+
+		// Check if projection is within segment bounds
+		if (projection < 0 || projection > lineLength)
+			return false;
+
+		// Find the closest point on the line segment
+		Vector3 closestPoint = wallStart + lineDir * projection;
+
+		// Check if the point is close enough to the wall
+		return (point - closestPoint).Length() < tileSize * 0.5f;
+	}
+
+	private void CreateSingleWall(Vector3 start, Vector3 end, float height, float thickness, bool isVertical)
+	{
+		Vector3 direction = end - start;
+		float length = direction.Length();
+
+		// Skip very small wall segments
+		if (length < tileSize * 0.2f)
+			return;
+
+		BoxMesh wallMesh = new BoxMesh();
+		if (isVertical)
+		{
+			wallMesh.Size = new Vector3(thickness, height, length);
+		}
+		else
+		{
+			wallMesh.Size = new Vector3(length, height, thickness);
+		}
+
+		MeshInstance3D wallInstance = new MeshInstance3D();
+		wallInstance.Mesh = wallMesh;
+		wallInstance.Name = "Wall";
+
+		StandardMaterial3D wallMaterial = new StandardMaterial3D();
+		wallMaterial.AlbedoColor = new Color(0.4f, 0.4f, 0.4f); // Gray walls
+		wallInstance.MaterialOverride = wallMaterial;
+
+		// Position at the center point
+		wallInstance.Position = start + direction * 0.5f;
+
+		// Use LookAt to properly orient the wall
+		if (isVertical)
+		{
+			Vector3 lookTarget = wallInstance.Position + Vector3.Right;
+			wallInstance.LookAt(lookTarget, Vector3.Up);
+		}
+
+		AddChild(wallInstance);
+	}
+
+	private void CreateDoor(Vector3 position, bool isVertical)
+	{
+		// Create a door mesh
+		BoxMesh doorMesh = new BoxMesh();
+		doorMesh.Size = new Vector3(tileSize * 0.8f, tileSize * 1.2f, tileSize * 0.1f);
+
+		MeshInstance3D doorInstance = new MeshInstance3D();
+		doorInstance.Mesh = doorMesh;
+		doorInstance.Name = "Door";
+
+		StandardMaterial3D doorMaterial = new StandardMaterial3D();
+		doorMaterial.AlbedoColor = new Color(0.6f, 0.3f, 0.1f); // Brown door
+		doorInstance.MaterialOverride = doorMaterial;
+
+		doorInstance.Position = new Vector3(position.X, tileSize * 0.6f, position.Z);
+
+		// Rotate the door based on orientation
+		if (isVertical)
+		{
+			doorInstance.RotationDegrees = new Vector3(0, 90, 0);
+		}
+
+		AddChild(doorInstance);
+	}
+	#endregion
 	// Returns points where paths intersect with rooms that aren't the path's endpoints
 	public List<Vector3> GetRoomPathIntersections()
 	{

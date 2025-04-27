@@ -54,12 +54,29 @@ public partial class BSPShip : Node3D
 						0,
 						Mathf.Round(leaf.position.Y * tileSize + Y * tileSize + tileSize / 2)
 					);
+					meshInstance.Name = "Room" + leaf.position.X + "_" + leaf.position.Y;
+
+					if (X == 0 && Y == 0)
+					{
+						meshInstance.Name = "Room" + leaf.position.X + "_" + leaf.position.Y + "_Start";
+						leaf.roomMeshMin = meshInstance;
+					}
+					else if (X == leaf.size.X - 1 && Y == leaf.size.Y - 1)
+					{
+						meshInstance.Name = "Room" + leaf.position.X + "_" + leaf.position.Y + "_End";
+						leaf.roomMeshMax = meshInstance;
+					}
+					else
+					{
+						meshInstance.Name = "Room" + leaf.position.X + "_" + leaf.position.Y;
+
+					}
 					AddChild(meshInstance);
 				}
 			}
 			#endregion
 		}
-		#region Draw the paths
+		#region Draw the paths/
 		foreach (var path in paths)
 		{
 			Vector2I start = path["left"];
@@ -256,23 +273,31 @@ public partial class BSPShip : Node3D
 			// Determine direction of the path
 			bool isHorizontal = from.Y == to.Y;
 
-			// Find the boundary point
+			// Find the boundary point, considering padding
 			Vector2I doorPos;
 			if (isHorizontal)
 			{
 				// Horizontal path - check if going left or right
 				if (from.X < to.X)
-					doorPos = new Vector2I(targetRoom.position.X + targetRoom.size.X, from.Y);
+					doorPos = new Vector2I(
+						targetRoom.position.X + targetRoom.size.X - targetRoom.padding.X,
+						from.Y);
 				else
-					doorPos = new Vector2I(targetRoom.position.X, from.Y);
+					doorPos = new Vector2I(
+						targetRoom.position.X + targetRoom.padding.X,
+						from.Y);
 			}
 			else
 			{
 				// Vertical path - check if going up or down
 				if (from.Y < to.Y)
-					doorPos = new Vector2I(from.X, targetRoom.position.Y + targetRoom.size.Y);
+					doorPos = new Vector2I(
+						from.X,
+						targetRoom.position.Y + targetRoom.size.Y - targetRoom.padding.Y);
 				else
-					doorPos = new Vector2I(from.X, targetRoom.position.Y);
+					doorPos = new Vector2I(
+						from.X,
+						targetRoom.position.Y + targetRoom.padding.Y);
 			}
 
 			doorPositions.Add(new Vector3(doorPos.X * tileSize, 0.6f, doorPos.Y * tileSize));
@@ -295,10 +320,11 @@ public partial class BSPShip : Node3D
 
 		foreach (RoomNode room in rootNode.GetLeaves())
 		{
-			float minX = room.position.X * tileSize;
-			float maxX = (room.position.X + room.size.X) * tileSize;
-			float minZ = room.position.Y * tileSize;
-			float maxZ = (room.position.Y + room.size.Y) * tileSize;
+			// Apply padding to room boundaries - match CreateRoomWalls logic
+			float minX = (room.position.X + room.padding.X) * tileSize;
+			float minZ = (room.position.Y + room.padding.Y) * tileSize;
+			float maxX = minX + (room.size.X - 2 * room.padding.X) * tileSize;
+			float maxZ = minZ + (room.size.Y - 2 * room.padding.Y) * tileSize;
 
 			// Check distance to vertical walls (X boundaries)
 			float distToXWall = Math.Min(
@@ -316,7 +342,6 @@ public partial class BSPShip : Node3D
 			closestZWall = Math.Min(closestZWall, distToZWall);
 		}
 
-		// If closer to X walls, door should be vertical (rotating around Y)
 		return closestXWall < closestZWall;
 	}
 
@@ -326,10 +351,10 @@ public partial class BSPShip : Node3D
 		float wallThickness = tileSize * 0.2f;
 
 		// Calculate room boundaries in world coordinates
-		float minX = room.position.X * tileSize;
-		float minZ = room.position.Y * tileSize;
-		float maxX = minX + room.size.X * tileSize;
-		float maxZ = minZ + room.size.Y * tileSize;
+		float minX = (room.position.X + room.padding.X) * tileSize;
+		float minZ = (room.position.Y + room.padding.Y) * tileSize;
+		float maxX = minX + (room.size.X - 2 * room.padding.X) * tileSize;
+		float maxZ = minZ + (room.size.Y - 2 * room.padding.Y) * tileSize;
 
 		// North wall (along minZ)
 		CreateWallWithDoors(
@@ -557,8 +582,14 @@ public partial class BSPShip : Node3D
 	// Helper method to check if a path segment intersects with a room
 	private void CheckSegmentRoomIntersection(RoomNode room, Vector2I segStart, Vector2I segEnd, bool isHorizontal, List<Vector3> intersections)
 	{
-		Vector2I roomMin = room.position;
-		Vector2I roomMax = room.position + room.size;
+		Vector2I roomMin = new Vector2I(
+			room.position.X + room.padding.X,
+			room.position.Y + room.padding.Y
+		);
+		Vector2I roomMax = new Vector2I(
+			room.position.X + room.size.X - room.padding.X,
+			room.position.Y + room.size.Y - room.padding.Y
+		);
 
 		if (isHorizontal)
 		{

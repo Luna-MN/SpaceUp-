@@ -10,6 +10,8 @@ public partial class RoomNode : Node3D
 	public Vector2I position;
 	public Vector2I size;
 	public Vector4I padding;
+	public MeshInstance3D roomMeshMin;
+	public MeshInstance3D roomMeshMax;
 
 	public RoomNode(Vector2I position, Vector2I size)
 	{
